@@ -1,0 +1,62 @@
+.container-beneficios{
+    display: flex;
+    flex-direction: column;
+    margin: 0 25vh 0 25vh;
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .container-beneficios > div > p {
+    color: #616161;
+    font-family: Roboto;
+    margin: 0 0 24px 0;
+    padding-left: 20px;
+    text-align: left;
+    margin: 0 5vh 0 5vh;
+  }
+
+  .titulo-beneficios{
+    display: flex;
+    padding-bottom: 30px;
+    margin: 0 5vh 0 5vh;
+  }
+
+  .titulo-beneficios > h1 {
+    font-size: 60px;
+    line-height: 64px;
+  }
+
+  .contenedor-cajas{
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .caja-naranja{
+    display: flex;
+    background-color: var(--firt_color);
+    height: 38vh;
+    width: 48vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color:white;
+    padding: 0 20px 0 20px;
+    cursor: pointer;
+  }
+
+  .caja-naranja > h4 {
+    margin-top: 10px;
+    font-size: 28px;
+  }
+
+  .caja-naranja:hover{
+    background-color: white;
+    transition: background-color 0.5s ease-out;
+    transform: translateY(-20px);
+    -webkit-box-shadow: 0px 10px 17px -2px rgba(0,0,0,0.10);
+    -moz-box-shadow: 0px 10px 17px -2px rgba(0,0,0,0.10);
+    box-shadow: 0px 10px 17px -2px rgba(0,0,0,0.10);
+    color: var(--firt_color);
+  }
