@@ -26,7 +26,7 @@ function App() {
             <Route path="/news" element={<News />} />
             <Route path="/redux" element={<ReduxComponent />} />
       </Routes>
-      <Footer/>
+      {/* <Footer/> */}
       </Router>
     </div>
   )
