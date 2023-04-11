@@ -1,4 +1,63 @@
 .home-container {
     height: 100vh;
-    border: solid black 1px;
+    border-top: solid black 1px;
   }
+
+  .home-logo-container{
+    display: flex;
+    justify-content: center;
+    /* height: 20vh; */
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url(https://res.cloudinary.com/do0gmouxr/image/upload/v1681232856/home/fondo-plano_uqmx34.png);
+    background-size: 80%;
+    background-repeat: no-repeat;
+    /* margin-top: 5vh; */
+  }
+
+  /* .home-logo-container > img {
+    width: 50%;
+  } */
+
+  .container-top{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 45vh 0 45vh
+  }
+
+  .container-vid{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center;
+    align-items: center;
+    margin: 0 200px 0 200px */
+  }
+
+  .container-vid > div > a > img{
+    height: 16vh;
+    width: 20vh;
+  }
+
+  .div-nosotros{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .div-nosotros > h1 {
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 60px;
+    line-height: 64px;
+  }
+
+  .div-nosotros > h6 {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+ 
