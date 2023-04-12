@@ -24,6 +24,9 @@
     
   }
 
+.dblock {
+  display: none;
+}
   
   
   .container-li > li {

@@ -1,10 +1,12 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import logo from "../../assets/LOGO.png"
 import "./navBar.css"
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const NavBar = () => {
   const [activeLink, setActiveLink] = useState(null);
+  const location = useLocation();
+  const [show, setShow] = useState(true);
 
   const handleLinkClick = (link) => {
     if (activeLink === link) {
@@ -14,8 +16,14 @@ const NavBar = () => {
     }
   };
 
+  useEffect(() => {
+    location.pathname === '/login/AreaPersonal' ? setShow(false) : setShow(true);
+    console.log(location);
+    console.log(show);
+  }, [location]);
+
   return (
-    <div className="navBar-container"> 
+    <div className={show ? 'navBar-container' : 'dblock'}> 
       <div>
         <img className ="navBar-img" src={logo} alt="logoMyConstrution" />
       </div>
