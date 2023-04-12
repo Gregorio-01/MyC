@@ -1,0 +1,490 @@
+:root {
+    --colorNaranjaClaro: #FF6A0E;
+    --colorNaranjaOscuro: #D65304;
+    --colorAzulOscuro: #0075FF;
+    --colorAzulClaro: #01FFFF;
+    --colorGrisOscuro: #353535;
+    --colorAmarrilo: #FAFF00;
+    --colorBlanco: #fff;
+    --colorNegroGris: #1A1A1A;
+    --colorRojo: red;
+    --colorNegro: rgb(0, 0, 0);
+    --fuenteprincipal: 'Nunito Sans';
+}
+
+/* .navBar-container {
+  display: none;
+} */
+
+.navbar{
+  display: flex;
+    align-items: center;
+}
+
+.navbar__img img{
+  width: 50px;
+}
+
+.header__enlaces {
+  font-size: 2rem;
+}
+
+.header__enlaces a {
+  color: var(--colorNegro);
+  margin-right: 2rem;
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  width: 852px;
+  margin-left: auto;
+  justify-content: space-between;
+}
+
+.header__img img {
+  width: 300px;
+  height: auto;
+}
+
+.header__user {
+    background-image: url(https://res.cloudinary.com/do0gmouxr/image/upload/v1680739249/Pagina%20Interna/background12_pdgwkw.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+    width: auto;
+    height: 650px;
+    font-size: 1.6rem;
+    text-shadow: 2px 1px 0.5px black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.profilePic {
+  background-image: url(https://myconstruction.com.ar/wp-content/uploads/2019/02/LOGO-512.png);
+}
+/*   
+.header__user {
+    justify-content: space-between;
+} */
+  
+.header__datos {
+    display: flex;
+    margin-top: 200px;
+    margin-left: 2rem;
+    align-items: center;
+    position: relative;
+}
+  
+.header__datos h1 {
+    color: var(--colorBlanco);
+}
+  
+.header__datos div {
+    width: 160px;
+    height: 160px;
+    border-radius: 12rem;
+    margin-right: 2rem;
+    /* background-image: url(); */
+    background-size: cover;
+    background-position: center center;
+}
+  
+.header__msjBtn {
+    margin-right: 2rem;
+    margin-top: 2rem;
+}
+  
+.header__msjBtn button {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    padding: 0;
+    margin: auto;
+    background-color: transparent;
+}
+  
+.header__msjBtn button img {
+    width: 50px;
+    height: 50px;
+}
+  
+.bg__mensajes{
+    position: fixed;
+    top: 0;
+    background-color: #1a1a1a9c;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    font-size: 1.6rem;
+    z-index: 1;
+}
+  
+.containerTabla{
+    background-color: var(--colorGrisOscuro);
+    width: 50%;
+    margin: auto;
+    margin-top: 20%;
+    color: var(--colorBlanco);
+}
+  
+.tablaMensajes{
+    background-color: var(--colorGrisOscuro);
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+  
+.btnCerrar__container .btnCerrar{
+    background-color: var(--colorRojo);
+    width: 200px;
+}
+  
+.btnCerrar__container{
+    padding: 4px;  
+}
+  
+.btnCerrar__container button{
+    background-color: var(--colorRojo);
+    text-align: center;
+    width: 90%;
+    margin: auto;
+    display: block;
+    height: 20px;
+    border-radius: 2rem;
+    color: var(--colorBlanco);
+}
+
+.main {
+    background-color: var(--colorNegro);
+    height: auto;
+    padding: 2rem;
+  
+}
+
+.main__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.proyectos__container {
+    width: 700px;
+    background-color: white;
+    padding: 2rem;
+    margin-right: 5rem;
+}
+  
+.proyectos__container h2 {
+    color: var(--colorNegro);
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
+.proyectos__button {
+    display: flex;
+    width: 600px;
+    margin: auto;
+}
+
+.proyectos__button button {
+    background-color: var(--colorNaranjaOscuro);
+    width: 250px;
+    padding: .8rem;
+    margin: auto;
+    color: var(--colorBlanco);
+    border-radius: .6rem;
+}
+  
+.proyectos__button button:last-of-type {
+    background-color: green;
+    
+}
+
+.card {
+    width: 210px;
+    height: 254px;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    overflow: visible;
+    background-color: var(--colorGrisOscuro);
+    padding: 1rem;
+}
+
+.card .item {
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.item:hover {
+    transform: scale(0.95);
+    transition: all 0.3s;
+}
+
+.item svg {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 7px;
+}
+
+.item--1 {
+    background: whitesmoke;
+}
+  
+.item--2 {
+    background: whitesmoke;
+}
+
+@media (min-width: 890px ) and (max-width: 1200px ){
+    .header__datos {
+    margin-top: 200px;
+    margin-left: 2rem;
+    align-items: center;
+    position: relative;
+    font-size: 1.4rem;
+    text-shadow: 2px 1px 1px black;
+   }
+    
+  }
+  
+  @media (min-width: 600px ) and (max-width: 890px ){
+    .header__user {
+    width: auto;
+    height: 500px;
+   }
+    
+    .header__user {
+    justify-content: space-between;
+   }
+  
+    .header__datos {
+    margin-top: 200px;
+    margin-left: 2rem;
+    align-items: center;
+    position: relative;
+    font-size: 1.4rem;
+    text-shadow: 2px 1px 1px black;
+   }
+    
+    .main__container{
+      flex-direction: column;
+    }
+    .proyectos__container{
+      margin: 0;
+      width: auto;
+    }
+    .card{
+      margin-top: 5rem;
+      width: 300px;
+    }
+    .proyectos__card{
+      width: 500px;
+    }
+    .proyectos__button {
+      display: flex;
+      width: 550px;
+      margin: auto;
+    }
+    .container__todos {
+      width: 452px;
+  }
+  .formulario__btns{
+    display:flex;
+    flex-direction: row-reverse;
+    flex-direction: column;
+  }
+  .formulario__btns button:nth-child(1){
+    margin-bottom: 1rem;
+  }
+  }
+  
+  @media (min-width: 450px ) and (max-width: 599px ){
+    .header__user {
+    height: 500px;
+    }
+    
+    .header__datos {
+    margin-top: 200px;
+    margin-left: 2rem;
+    align-items: center;
+    position: relative;
+    font-size: 1.2rem;
+    text-shadow: 1.5px 1.5px 0.4px black;
+   }
+  
+    .main__container{
+      flex-direction: column;
+    }
+    .proyectos__container{
+      margin: 0;
+      width: auto;
+    }
+    .card{
+      margin-top: 5rem;
+      width: 300px;
+    }
+    .proyectos__card{
+      width: 400px;
+    }
+    .proyectos__button {
+      display: flex;
+      flex-direction: column;
+      width: 360px;
+      margin: auto;
+      margin-top: 1rem;
+    }
+    .proyectos__button button:nth-child(1){
+      margin-bottom: 1.6rem;
+    }
+    .container__todos {
+      width: 440px;
+      overflow: hidden;
+      overflow-x: scroll;
+  }
+  .formulario__btns{
+    display:flex;
+    flex-direction: row-reverse;
+    flex-direction: column;
+  }
+  .formulario__btns button:nth-child(1){
+    margin-bottom: 1rem;
+  }
+  .containerTabla{
+    background-color: whitesmoke;
+    width: 95%;
+    margin: auto;
+    margin-top: 20%;
+    height: auto;
+    color: var(--colorBlanco);
+  }
+  }
+  
+  @media (min-width: 350px ) and (max-width: 449px ){
+    .main__container{
+      flex-direction: column;
+    }
+    .proyectos__container{
+      margin: 0;
+      width: 300px;
+    }
+    .card{
+      margin-top: 5rem;
+      width: 300px;
+    }
+    .proyectos__card{
+      width: 90%;
+    }
+    .proyectos__button {
+      display: flex;
+      flex-direction: column;
+      width: auto;
+      margin: auto;
+    }
+    .proyectos__button button:nth-child(1){
+      margin-bottom: 1rem;
+    }
+  
+  .container__todos {
+    width: auto;
+    height: auto;
+    width: 90%;
+    margin-top: 3.5rem;
+  }
+  .formulario__btns{
+    display:flex;
+    flex-direction: row-reverse;
+    flex-direction: column;
+  }
+  .formulario__btns button:nth-child(1){
+    margin-bottom: 1rem;
+  }
+  .containerTabla{
+    background-color: var(--colorGrisOscuro);
+    width: 95%;
+    margin: auto;
+    margin-top: 20%;
+    height: auto;
+    color: var(--colorBlanco);
+  }
+  }
+  
+  @media (min-width: 280px ) and (max-width: 349px ){
+    
+    .main__container{
+      flex-direction: column;
+    }
+    .proyectos__container{
+      margin: 0;
+      width: 270px;
+    }
+    .card {
+      width: 259px;
+      margin-top: 2rem;
+  }
+    .proyectos__card{
+      width: 90%;
+    }
+    .proyectos__button {
+      display: flex;
+      flex-direction: column;
+      width: auto;
+      margin: auto;
+    }
+    .proyectos__button button:nth-child(1){
+      margin-bottom: 1rem;
+    }
+    .proyectos__button button{
+      width: 230px;
+    }
+  .header__user{
+    flex-direction: column-reverse;
+  
+    margin: auto;
+  
+  }
+  .btnSalir{
+    width: 80%;
+    
+    margin: auto;
+    
+  }
+  .proyectos__button button {
+    width: 100%;
+  }
+  .header__msjBtn {
+    margin: auto;
+  }
+  .header__datos {
+    margin: auto;
+    align-items: center;
+  }
+  .container__todos {
+    width: 90%;
+    height: auto;
+  }
+  .formulario__btns{
+    display:flex;
+    flex-direction: row-reverse;
+    flex-direction: column;
+  }
+  .formulario__btns button:nth-child(1){
+    margin-bottom: 1rem;
+  }
+  .containerTabla{
+    background-color: var(--colorGrisOscuro);
+    width: 95%;
+    margin: auto;
+    margin-top: 20%;
+    height: auto;
+    color: var(--colorBlanco);
+  }
+  }
