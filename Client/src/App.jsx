@@ -8,6 +8,7 @@ import NavBar from "./Components/NavBar/navBar"
 import News from "./Components/News/news"
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import './App.css'
+import { ReduxComponent } from "./Components/ReducComponent/ReduxComponent"
 
 function App() {
   
@@ -23,8 +24,9 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/news" element={<News />} />
+            <Route path="/redux" element={<ReduxComponent />} />
       </Routes>
-      <Footer/>
+      {/* <Footer/> */}
       </Router>
     </div>
   )
