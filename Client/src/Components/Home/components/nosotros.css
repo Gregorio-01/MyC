@@ -1,0 +1,120 @@
+.home-logo-container{
+    display: flex;
+    justify-content: center;
+    height: 31vh;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url(https://res.cloudinary.com/do0gmouxr/image/upload/v1681232856/home/fondo-plano_uqmx34.png);
+    background-size: 100%;
+    background-position-y: 100%;
+    background-repeat: no-repeat;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .home-logo-container > img {
+    width: 50%;
+    height: 50%;
+  }
+
+  .container-top{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20vh 0 20vh;
+  }
+
+  .container-vid{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .div-video{
+    display: flex;
+    width: 50%;
+  }
+
+  .div-video > a {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 600px;
+    transition: transform 0.2s ease-in-out;
+  }
+
+
+  .div-video > a:hover{
+    transform: translateY(-7px);
+  }
+
+  .boton-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10%;
+    height: 16%;
+    max-width: 50px;
+    border: none;
+    background-color: var(--firt_color);
+    /* border-radius: 50%; */
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .boton-play:before {
+    content: "";
+    border-style: solid;
+    border-width: 9px 0 9px 18px;
+    border-color: transparent transparent transparent #ffffff;
+    display: inline-block;
+    width: 70%; /* Establece un ancho en porcentaje */
+    max-width: 20px; /* Establece un ancho máximo */
+    height: 10;
+    margin-left: 14px;
+    transform: translateY(-2px);
+  }
+
+
+  .div-video > a  > img{
+    width: 100%;
+  }
+
+  .div-nosotros{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-left: 4vh;
+  }
+
+  .div-nosotros >div > h1 {
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 60px;
+    line-height: 64px;
+  }
+
+  .div-nosotros > h6 {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: left;
+    margin-top: 3vh;
+  }
+
+  .div-descripcion{
+    display: flex;
+    padding-top: 10px;
+  }
+
+  .div-descripcion > h6 {
+    font-size: 20px;
+    line-height: 24px;
+    text-align: left;
+    margin-top: 3vh;
+  }
