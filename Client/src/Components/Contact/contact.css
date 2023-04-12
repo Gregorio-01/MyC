@@ -1,4 +1,51 @@
 .contact-container {
-    height: 100vh;
-    border: solid black 1px;
+  height: 100vh;
+  border-top: solid black 1px;
+  
+  }
+
+  .contact-div-top{
+    display: flex;
+    flex-direction: row;
+    margin: 10vh 20vh 0 20vh;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .contacto-title{
+    padding: 0;
+    color: #212121;
+    font-weight: 700;
+    text-transform: none;
+    font-size: 60px;
+  }
+
+/* 
+  .span-contacto::before{
+    display: inline-block;
+    top: 50%;
+    font-size: 10px;
+    line-height: 16px;
+    width: 32px;
+    text-align: center;
+    position: relative;
+    vertical-align: middle;
+  } */
+
+  .div-inico-contacto{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 40px;
+    border: 1px solid red;
+    justify-content: flex-end
+  }
+
+  .div-inico-contacto > a {
+    text-decoration: none;
+    /* font-size: 40px; */
+  }
+
+  .div-inico-contacto > span {
+    margin-left: 5vh;
   }
