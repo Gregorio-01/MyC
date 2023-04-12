@@ -9,6 +9,7 @@ import News from "./Components/News/news"
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import './App.css'
 import { ReduxComponent } from "./Components/ReducComponent/ReduxComponent"
+import { Register } from "./Components/Register/Register"
 
 function App() {
   
@@ -24,6 +25,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/news" element={<News />} />
+            <Route path="/register" element={<Register />} />
             <Route path="/redux" element={<ReduxComponent />} />
       </Routes>
       {/* <Footer/> */}
