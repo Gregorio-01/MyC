@@ -9,7 +9,7 @@ export const Register = () => {
  
   return (
     <div>
-      <h1>Formik Abstractation</h1>
+      <h1>Formulario de registro</h1>
 
       <Formik
         initialValues={{
@@ -43,6 +43,7 @@ export const Register = () => {
       >
         {
           (formik) => (
+            <div className="form-container">
             <Form >
         <MyTextInput
          label='firstName'
@@ -61,7 +62,7 @@ export const Register = () => {
           type="email"
           />
        
-       <MySelect MySelect label='role' name='role'>
+       <MySelect label='role' name='role'>
          <option value=''>Pick something</option>    
          <option value='user'>User</option>    
          <option value='company'>Company</option>    
@@ -71,9 +72,11 @@ export const Register = () => {
 
         <button type="submit">Submit</button>
       </Form>
+      </div>
           )
         }
       </Formik>
+      
 
       
     </div>
