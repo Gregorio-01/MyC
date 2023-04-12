@@ -9,7 +9,7 @@ export const Register = () => {
  
   return (
     <div>
-      <h1>Formulario de registro</h1>
+      
 
       <Formik
         initialValues={{
@@ -35,44 +35,50 @@ export const Register = () => {
                         .required('El correo electrónico es obligatorio'),
          terms: yup.boolean()
                         .oneOf([true], 'Debe de aceptar las condiciones'),
-         jobType: yup.string()
-                        .notOneOf(['it-jr'], 'esta opcion no es permitida.')
-                        .required('Requerido')      
+         role: yup.string()
+                        .required('Debes seleccionar un rol')      
          
         })}
       >
         {
           (formik) => (
+            
             <div className="form-container">
-            <Form >
-        <MyTextInput
-         label='firstName'
-          name='firstName'
-          placeholder="your first name"
-          />
-        <MyTextInput
-         label='lastName'
-          name='lastName'
-          placeholder="your last name"
-          />
-        <MyTextInput
-         label='emailAddress'
-          name='emailAddress'
-          placeholder="your email"
-          type="email"
-          />
-       
-       <MySelect label='role' name='role'>
-         <option value=''>Pick something</option>    
-         <option value='user'>User</option>    
-         <option value='company'>Company</option>    
-      </MySelect>
-        
-        <MyCheckbox label="Termns & Conditions" name="terms" />
+            <br/>
+  <Form className="form">
+  <h3>Formulario de registro</h3>
+  <hr/>
+    <MyTextInput
+      className="input-field"
+      label='firstName'
+      name='firstName'
+      placeholder="your first name"
+    />
+    <MyTextInput
+      className="input-field"
+      label='lastName'
+      name='lastName'
+      placeholder="your last name"
+    />
+    <MyTextInput
+      className="input-field"
+      label='emailAddress'
+      name='emailAddress'
+      placeholder="your email"
+      type="email"
+    />
+    <MySelect className="input-field" label='role' name='role'>
+      <option value=''>Pick something</option>    
+      <option value='user'>User</option>    
+      <option value='company'>Company</option>    
+    </MySelect>
 
-        <button type="submit">Submit</button>
-      </Form>
-      </div>
+    <MyCheckbox  label="Termns & Conditions" name="terms" />
+
+    <button className="submit-button" type="submit">Submit</button>
+  </Form>
+</div>
+
           )
         }
       </Formik>

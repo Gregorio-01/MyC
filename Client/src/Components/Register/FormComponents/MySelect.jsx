@@ -10,7 +10,8 @@ export const MySelect = ({label,...props}) => {
     <>
         <label htmlFor={props.id || props.name}> {label} </label>
         <select  {...field} {...props} />
-        <ErrorMessage name={props.name} component='span' className="custom-error-span-class"/>
+        <ErrorMessage name={props.name} component='span' className="form-error"/>
+        <br/>
     </>
   )
 }

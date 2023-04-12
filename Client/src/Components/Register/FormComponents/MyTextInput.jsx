@@ -7,10 +7,11 @@ export const MyTextInput = ({label,...props}) => {
   return (
 
     <>
-        <label htmlFor={props.id || props.name}> {label} </label>
-        <input className="text-input" {...field} {...props} />
-        <ErrorMessage name={props.name} component='span' className="custom-error-span-class"/>
-      
-    </>
+  <label htmlFor={props.id || props.name} className="form-label">{label}</label>
+  <input className="input-field" {...field} {...props} />
+  <ErrorMessage name={props.name} component='span' className="form-error" />
+  <br/>
+</>
+
   )
 }

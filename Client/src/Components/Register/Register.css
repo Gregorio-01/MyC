@@ -57,3 +57,7 @@
   .form-error {
     color: red;
   }
+  .checkbox-label {
+    margin-left: 10px;
+  }
+  
