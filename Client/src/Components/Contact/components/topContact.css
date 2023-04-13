@@ -1,0 +1,69 @@
+.contact-div-top{
+    display: flex;
+    flex-direction: row;
+    margin: 8vh 0 0 0;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .contacto-title{
+    padding: 0;
+    color: #212121;
+    font-weight: 700;
+    text-transform: none;
+    font-size: 60px;
+  }
+
+  .span-contacto::before{
+    display: inline-block;
+    top: 50%;
+    font-size: 10px;
+    line-height: 16px;
+    width: 32px;
+    text-align: center;
+    position: relative;
+    vertical-align: middle;
+  }
+
+  .div-inico-contacto{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 40px;
+    justify-content: flex-end;
+    color: #616161;
+  }
+
+  .div-inico-contacto > p {
+    text-decoration: none;
+    position: relative;
+    font-weight: 500;
+    color: #616161;
+  }
+
+  .div-inico-contacto > a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 1px;
+    width: 100%;
+    background-color: orange;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+    transform: scaleX(0);
+  }
+  
+  .div-inico-contacto > a:hover::after {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+
+  .div-inico-contacto > span {
+    margin-left: 1.5vh;
+    font-weight: 500;
+  }
+
+  .icono-contacto{
+    color: var(--firt_color)
+  }
