@@ -11,22 +11,22 @@ import './App.css'
 import { ReduxComponent } from "./Components/ReducComponent/ReduxComponent"
 
 function App() {
-  
+
 
   return (
     <div>
       <Router>
-      <NavBar/>
-      <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/news" element={<News />} />
-            <Route path="/redux" element={<ReduxComponent />} />
-      </Routes>
-      {/* <Footer/> */}
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/redux" element={<ReduxComponent />} />
+        </Routes>
+        <Footer />
       </Router>
     </div>
   )
