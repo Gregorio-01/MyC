@@ -8,7 +8,7 @@ export const TopContact = () => {
     <h1 className="contacto-title">Contacto</h1>
       <div className='div-inico-contacto'>
         <Link to="Home">
-            <p>Inicio</p>
+            <p className='p-inicio-contact'>Inicio</p>
         </Link>
         <span className='icono-contacto'>&gt;</span>
         <span> Contacto </span>

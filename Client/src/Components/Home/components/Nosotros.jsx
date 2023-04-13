@@ -30,7 +30,7 @@ export const Nosotros = () => {
           data-aos-delay="50"
           data-aos-duration="1000"
           data-aos-easing="ease-in-out" >
-            <a class="modal-video-poster video-modal" href="https://www.youtube.com/watch?v=dfjgBpwLiRs">
+            <a className="modal-video-poster video-modal" href="https://www.youtube.com/watch?v=dfjgBpwLiRs">
                 <img alt="Video poster" src="https://res.cloudinary.com/do0gmouxr/image/upload/v1681244950/home/intro_ou7bjt.png"/>
                 <button className="boton-play"></button>
             </a>
