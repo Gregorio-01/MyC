@@ -1,10 +1,11 @@
+import { TopNews } from "./components/topNews"
 import "./news.css"
 
 const News
  = () => {
     return (
       <div className="news-container">
-        News
+        <TopNews />
       </div>
     )
   }
