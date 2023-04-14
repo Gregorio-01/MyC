@@ -1,4 +1,5 @@
 .about-container {
-    height: 100vh;
-    border: solid black 1px;
+    height: 100%;
+    border-top: solid black 1px;
+    padding-bottom:5%
   }

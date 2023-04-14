@@ -11,6 +11,8 @@ import AreaPersonal from "./Components/Login/Area Personal/areaPersonal";
 import "./App.css";
 import { ReduxComponent } from "./Components/ReducComponent/ReduxComponent"
 import { Register } from "./Components/Register/Register"
+import Whatsappbutton from "./Components/WhatsApp/whatsappbutton";
+import Terminos from "./Components/Terminos/terminos";
 
 
 function App() {
@@ -28,7 +30,9 @@ function App() {
         <Route path="/news" element={<News />} />
         <Route path="/register" element={<Register />} />
         <Route path="/redux" element={<ReduxComponent />} />
+        <Route path="/terms-of-service" element={<Terminos />} />
       </Routes>
+      <Whatsappbutton />
       <Footer />
     </Router>
   );

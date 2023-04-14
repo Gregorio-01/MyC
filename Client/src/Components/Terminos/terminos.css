@@ -1,0 +1,18 @@
+.body-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: start;
+    padding-top:20px;
+    padding-bottom:40px;
+}
+.body-container>p{
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 400;
+    color:#212121;
+    padding:5px;
+    margin-left: 87px;
+    margin-right: 87px;
+    margin-bottom: 15px;
+}

@@ -244,6 +244,37 @@
     background: whitesmoke;
 }
 
+.Dropdown {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  top: 6.6rem;
+  right: 0;
+  width: 130px;
+  height: 14rem;
+  padding: 15px;
+  padding-top: 1px;
+  background-color: white;
+}
+
+.Dropdown a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 20px;
+  padding-top: 10px;
+  margin-right: 0px;
+}
+
+.Dropdown h4 {
+  position: absolute;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
 @media (min-width: 890px ) and (max-width: 1200px ){
     .header__datos {
     margin-top: 200px;

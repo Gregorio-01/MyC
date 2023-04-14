@@ -18,7 +18,7 @@ export const EcoConstruccion = () => {
       data-aos-delay="50"
       data-aos-duration="1000"
       data-aos-easing="ease-in-out">
-        <a class="modal-video-poster video-modal" href="https://www.youtube.com/watch?v=1-Bjm2AxoJ8&ab_channel=MYCONSTRUCTIONARG">
+        <a className="modal-video-poster video-modal" href="https://www.youtube.com/watch?v=1-Bjm2AxoJ8&ab_channel=MYCONSTRUCTIONARG">
             <img alt="Video poster" src="https://res.cloudinary.com/do0gmouxr/image/upload/v1681244947/home/2_kxaafm.jpg"/>
             <button className="boton-play"></button>
         </a>
