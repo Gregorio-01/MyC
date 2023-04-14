@@ -29,8 +29,6 @@ function App() {
         <Route path="/news" element={<News />} />
         <Route path="/register" element={<Register />} />
         <Route path="/redux" element={<ReduxComponent />} />
-        {/* <Route path="/wpp" element={<Whatsappbutton />} /> */}
-
       </Routes>
       <Whatsappbutton />
       <Footer />
