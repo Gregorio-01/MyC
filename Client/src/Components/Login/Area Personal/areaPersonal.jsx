@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import './areaPersonal.css';
 import {Link} from 'react-router-dom';
 
 export default function AreaPersonal () {
+
+    const [showDd, setShowDd] = useState(false);
+
     return (
         <div>
             <header className="header">
@@ -17,9 +20,30 @@ export default function AreaPersonal () {
                         <Link to="/contact">
                             <a href="">Contacto</a>
                         </Link>
-                        <a className='navbar__img abierto' id='btnNavNormal'>
+                        <a onClick={() => setShowDd((prev) => !prev)} className='navbar__img' id='btnNavNormal'>
                             <img src="https://res.cloudinary.com/do0gmouxr/image/upload/v1680739240/Pagina%20Interna/menu_inpu5v.png" alt="menu"/>
                         </a>
+                        {
+                            showDd && (
+                            <div className="Dropdown">
+                                <Link to='/login/areaPersonal'>
+                                    <h4>Área Personal</h4>
+                                </Link>
+                                <Link to='/'>
+                                    <h4>Empresas Asociadas</h4>
+                                </Link>
+                                <Link to='/'>
+                                    <h4>Herramientas</h4>
+                                </Link>
+                                <Link to='/'>
+                                    <h4>Términos y Condiciones</h4>
+                                </Link>
+                                <Link to='/'>
+                                    <h4>Cerrar Sesión</h4>
+                                </Link>
+                            </div>
+                            )
+                        }
                     </div>
                 </div>
                 <div className="contenedor__Responsive" id="contenedor"> </div>
@@ -78,7 +102,7 @@ export default function AreaPersonal () {
 
                 </section>
             </main>
-            <footer class="footer">
+            {/* <footer class="footer">
                 <div class="footer__container d-flex">
                     <h4>"La unidad vale por su entorno"</h4>
                     <a href="./terminosYcondiciones.html">Términos y Condiciones</a>
@@ -86,7 +110,7 @@ export default function AreaPersonal () {
             </footer>
             <script src="../js/navbar.js"></script>
             <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-            <script src="../js/areaPersonal.js"></script>
+            <script src="../js/areaPersonal.js"></script> */}
         </div>
     );
 };
