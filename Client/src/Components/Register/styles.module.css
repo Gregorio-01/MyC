@@ -1,0 +1,106 @@
+.container2 {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  height: 100vh;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('https://res.cloudinary.com/do0gmouxr/image/upload/v1680739249/Pagina%20Interna/background12_pdgwkw.jpg');
+}
+
+  
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+  width: 350px;
+  margin: auto; /* Agregamos margen automático para centrar */
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+}
+  
+  .form label {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+  
+  .input{
+    width: 100%;
+    padding: 10px 10px 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  
+  .form button.submit{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    color: #fff;
+    background-color: orange;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  .form a.forgotPassword {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+    text-align: center;
+  }
+  .input{
+    width: 100%;
+  }
+  .form-error {
+    color: red;
+  }
+  .checkboxLabel {
+    margin-left: 10px;
+  }
+  
+  .registerModal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  }
+
+  .modalBtn{
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    position: "absolute";
+    bottom: "10px" 
+  }
+/*   .modalContent {
+    width: 400px;
+    height: 200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+  } */

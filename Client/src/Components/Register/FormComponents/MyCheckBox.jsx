@@ -8,7 +8,7 @@ export const MyCheckbox = ({label,...props}) => {
   return (
 
     <>
-      <label className="form-label">
+      <label className="label">
       <input type="checkbox" {...field} {...props} />
          {label}
           </label>
