@@ -5,7 +5,6 @@ export const CategoryEnum = ['Comercial', 'Grupo Familiar Pequeño', 'MC', 'Mult
 const categorySchema = new mongoose.Schema({
   name: {
     type: String,
-    enum: CategoryEnum,
     required: true
   }
 });
