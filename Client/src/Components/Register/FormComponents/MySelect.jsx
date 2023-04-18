@@ -1,10 +1,13 @@
 import { ErrorMessage, useField } from "formik"
+import { useEffect } from "react"
 
 
-export const MySelect = ({label,...props}) => {
+export const MySelect = ({label, setSelectedRole,...props}) => {
 
  const [field] = useField(props)
-
+  useEffect(() => {
+    setSelectedRole(field.value)
+     }, [field.value]);
   return (
 
     <>

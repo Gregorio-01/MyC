@@ -1,4 +1,4 @@
-import { Formik, Form } from 'formik'
+import { Formik, Form, validateYupSchema } from 'formik'
 import * as yup from 'yup'
 import useModal from '../../hooks/useModal/useModal'
 import { MyTextInput } from './FormComponents/MyTextInput'
@@ -6,9 +6,14 @@ import { MySelect } from './FormComponents/MySelect'
 import { MyCheckbox } from './FormComponents/MyCheckBox'
 
 import styles from './styles.module.css' // Importar el archivo CSS para los estilos del componente
+import { useState } from 'react'
+import { conditionsCompany, conditionsUser } from './conditions/conditions'
 
 export const Register = () => {
   const [ModalComponent, openModal, closeModal] = useModal()
+
+  const [selectedRole, setSelectedRole] = useState('')
+
 
   return (
     <div className={styles.container2}>
@@ -100,19 +105,21 @@ export const Register = () => {
               placeholder="Repite tu password"
               type="password"
             />
-            <MySelect className={styles.input} label="role" name="role">
+            <MySelect className={styles.input} label="role" name="role" setSelectedRole={setSelectedRole}>
               <option value="">Selecciona un rol</option>
               <option value="user">User</option>
               <option value="company">Company</option>
             </MySelect>
             <MyCheckbox
+              className="checkbox"
               label="Términos y condiciones"
               name="terms"
-              onClick={openModal} // Agregar el manejador de eventos onClick
+              onClick={openModal} 
+              disabled={!['user', 'company'].includes(formik.values.role)}// Agregar el manejador de eventos onClick
             />
 
             <button className={styles.submit} type="submit">
-              Submit
+              Enviar
             </button>
             <br />
           </Form>
@@ -120,17 +127,9 @@ export const Register = () => {
       </Formik>
       <ModalComponent>
         <div>
-          Como empresa nos dedicamos única y exclusivamente a la proyección de
-          los edificios u obras que aparecen en el sitio web, por lo que no
-          somos responsables de la utilidad final que se le dé. Nosotros hacemos
-          un proyecto y se realiza en un estricto tipo de lote, con sus
-          respectivas normas y características, lo cual especificamos en cada
-          proyecto. Por lo que no nos hacemos cargo si se realiza fuera de las
-          especificaciones que les sugerimos. Nosotros hacemos un proyecto y se
-          realiza en un estricto tipo de lote, con sus respectivas normas y
-          características, lo cual especificamos en cada proyecto. Por lo que no
-          nos hacemos cargo si se realiza fuera de las especificaciones que les
-          sugerimos.
+          {!selectedRole && 'Debe seleccionar un role para ver las condiciones'}
+          {selectedRole=='user' && conditionsUser}
+          {selectedRole=='company' && conditionsCompany}
         </div>
       </ModalComponent>
     </div>

@@ -51,6 +51,10 @@
     font-weight: 600;
     cursor: pointer;
   }
+  .form button.submit:hover {
+    border: 2px solid #604020;
+    color: #604020;
+  }
   
   .form a.forgotPassword {
     font-size: 14px;
@@ -91,16 +95,7 @@
     position: "absolute";
     bottom: "10px" 
   }
-/*   .modalContent {
-    width: 400px;
-    height: 200px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
-  } */
+
+  .label a:hover {
+    text-decoration: underline;
+  }
