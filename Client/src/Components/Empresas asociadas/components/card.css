@@ -1,0 +1,102 @@
+.container {
+    background-color: black;
+
+}
+
+.card-container {
+    display: flex;
+    height: 21rem;
+    width: 19rem;
+    flex-direction: column;
+    border: 1px solid black;
+    background-color: antiquewhite;
+    z-index: 9;
+
+}
+
+.banner-container {
+    height: 21rem;
+    width: 19rem;
+    position: absolute;
+    z-index: 0;
+}
+
+.banner {
+    height: 100%;
+    width: 100%
+}
+
+.photo-container {
+    position: relative;
+    bottom:15%;
+    width: 5rem;
+    height: 5rem;
+    box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    z-index: 9;
+}
+
+.photo {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 15px;
+    z-index: 9;
+}
+
+.section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    margin-top: 30%;
+    height: 100%;
+    width: 100%;
+}
+
+.products-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 16px;
+    padding:5%
+}
+
+.product-photo{
+    height:4rem;
+    width: 4rem;
+    border: 1px solid lightgrey;
+    border-radius: 10%;
+}
+
+.title{
+    color: #333;
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: -15px;
+    text-align: center;
+    font-family:'Nunito Sans'
+}
+
+.tienda-button{
+    display: flex;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    color: #999;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 1rem;
+    transition: 1s;
+}
+
+.tienda-button:hover{
+    display: flex;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    color: #24a6aa;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 1rem;
+    transition: 1s;
+}
