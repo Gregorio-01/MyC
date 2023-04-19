@@ -10,7 +10,8 @@
     align-items: center;
 }
 .news-container {
+    width: 100%;
     display: grid;
-    grid-template-columns: repeat(3, 370px);
+    grid-template-columns: repeat(auto-fit, 370px);
     gap: 20px;
 }

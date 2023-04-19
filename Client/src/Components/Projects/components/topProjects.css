@@ -1,0 +1,8 @@
+.news-div-top{
+    display: flex;
+    width: 90%;
+    flex-direction: row;
+    margin: 8vh 0 0 0;
+    justify-content: space-between;
+    align-items: center;
+}

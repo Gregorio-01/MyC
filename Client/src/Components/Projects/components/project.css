@@ -1,0 +1,33 @@
+.project-container {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    width: 370px;
+    height: fit-content;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.103);
+}
+
+.project-container img{
+    width: 100%;
+    aspect-ratio: 10/7;
+    object-fit: cover;
+}
+
+.project-container-title{
+    width: 90%;
+}
+.project-container h2{
+    margin-top: 5px;
+    font-size: 28px;
+    color: rgb(21, 21, 21);
+}
+.project-container h4{
+    margin-top: 15px;
+    width: 90%;
+    font-size: 14px;
+    color: rgb(21, 21, 21);
+}
