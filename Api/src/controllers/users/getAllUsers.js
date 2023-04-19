@@ -1,6 +1,13 @@
 import User from '../../models/Users.js';
 
 export const getAllUsers = async (req, res) => {
+  
+  
+  if(req.usuario.admin===false){
+   return  res.status(401).send('usuario no autorizado')
+  }
+
+
   try {
     const users = await User.find();
     res.json(users);
