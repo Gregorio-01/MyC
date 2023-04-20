@@ -7,27 +7,32 @@ const associateSchema = new mongoose.Schema({
   },
   banner: {
     type: String,
-    default: "https://myconstruction.com.ar/wp-content/uploads/2019/02/LOGO-512.png",
+    required: true,
+
   },
   photo: {
     type: String,
-    default: "https://myconstruction.com.ar/wp-content/uploads/2019/02/LOGO-512.png",
+    required: true,
+
   },
   product1: {
     type: String,
-    default: "https://myconstruction.com.ar/wp-content/uploads/2019/02/LOGO-512.png",
+    required: true,
+
   },
   product2: {
     type: String,
-    default: "https://myconstruction.com.ar/wp-content/uploads/2019/02/LOGO-512.png",
+    required: true,
+
   },
   product3: {
     type: String,
-    default: "https://myconstruction.com.ar/wp-content/uploads/2019/02/LOGO-512.png",
+    required: true,
+
   },
   destacada: {
     type: Boolean,
-    default:false
+    default: false
   }
 });
 
