@@ -5,3 +5,7 @@ export const DB_USER = process.env.DB_USER;
 export const DB_PASSWORD = process.env.DB_PASSWORD;
 export const DB_NAME = process.env.DB_NAME;
 export const DB = process.env.DB;
+export const CL_URL = process.env.CL_URL;
+export const CL_CLOUD_NAME = process.env.CL_CLOUD_NAME;
+export const CL_API_KEY = process.env.CL_API_KEY;
+export const CL_API_SECRET = process.env.CL_API_SECRET;
