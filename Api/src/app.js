@@ -1,6 +1,7 @@
 import express from 'express';
 import morgan from 'morgan';
 import routes from './routes/index.js';
+import fileUpload from 'express-fileupload';
 
 const app = express();
 
@@ -19,6 +20,8 @@ app.use((req, res, next) => {
   res.header('X-Total-Count', '1000');
   next();
 });
+
+app.use(fileUpload({useTempFiles: true}));
 
 app.use('/', routes);
 

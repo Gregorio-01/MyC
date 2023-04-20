@@ -3,10 +3,12 @@ import * as yup from 'yup'
 import './login.css'
 import 'animate.css';
 import { useEffect, useState } from 'react';
+import { loginUser } from '../../store/slices/users/thunks';
+import { useDispatch } from 'react-redux';
 
 const Login = () => {
 
-
+  const dispatch = useDispatch()
 
   return (
     <div className="login-container">
@@ -49,7 +51,8 @@ const Login = () => {
           password: '',
         }}
         onSubmit={(values) => {
-          console.log(values)
+         
+          dispatch( loginUser(values))
         }}
         validationSchema={yup.object({
           email: yup
@@ -58,7 +61,7 @@ const Login = () => {
             .required('Debes ingresar tu correo electrónico'),
           password: yup
             .string()
-            .min(8, 'Mínimo debe tener 8 caracteres')
+            .min(2, 'Mínimo debe tener 8 caracteres')
             .max(10, 'Máximo 10 caracteres')
             .required('El password es requerido'),
         })}

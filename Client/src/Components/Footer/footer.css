@@ -83,41 +83,48 @@
     gap: 5px
 }
 
-li {
+
+
+.unactive {
     text-align: start;
     list-style-type: none;
     font-weight: bold;
-    padding: 5px;
+    margin-bottom:5px;
     text-decoration: none;
     color: white;
 }
 
 .active {
+    text-align: start;
+    list-style-type: none;
+    font-weight: bold;
+    margin-bottom:5px;
+    text-decoration: none;
     color: lightgray;
+    
 }
 
-li> a:visited {
+.active li> a:visited {
     text-decoration: none;
     color: white;
 }
 
-li:hover {
+.unactive:hover {
     text-decoration: none;
     color: lightgray;
+    transition: background-color 1s ease-out;
 }
 
-h1,
-p {
-    color: white
-}
 
-p {
+
+.text {
     color: white;
     font-size: 18px;
     line-height: 32px
 }
 
-h1 {
+.title {
+    color: white;
     font-size: 24px;
     line-height: 28px;
     margin-bottom: 25px;
