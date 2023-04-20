@@ -22,42 +22,42 @@ const Footer = () => {
         <div className="parent">
           <div className="div1">
             <img className="navBar-img" src={'https://myconstruction.com.ar/wp-content/uploads/2019/02/Logo-BLANCO.png'} alt="logo My Construction" />
-            <p>Somos los encargados de hacer su sueño realidad.</p>
-            <p>Reduciendo tanto tiempos de obra como costos y adquiriendo nuevos sistemas y comodidades.</p>
+            <p className="text">Somos los encargados de hacer su sueño realidad.</p>
+            <p className="text">Reduciendo tanto tiempos de obra como costos y adquiriendo nuevos sistemas y comodidades.</p>
           </div>
           <div className="divider">
             <div className="div2">
-              <h1>Menú</h1>
+              <h1 className="title">Menú</h1>
               <ul className="footer-list">
                 <NavLink to='/' onClick={() => handleLinkClick(null)}>
-                  <li className={activeLink === null ? 'active' : ''}>Inicio</li>
+                  <li className={activeLink === null ? 'active' : 'unactive'}>Inicio</li>
                 </NavLink>
                 <NavLink to='/projects' onClick={() => handleLinkClick('projects')}>
-                  <li className={activeLink === 'projects' ? 'active' : ''}>Proyectos</li>
+                  <li className={activeLink === 'projects' ? 'active' : 'unactive'}>Proyectos</li>
                 </NavLink>
                 <NavLink to='/terms-of-service' onClick={() => handleLinkClick('terms-of-service')}>
-                  <li className={activeLink === 'terms-of-service' ? 'active' : ''}>Términos y condiciones</li>
+                  <li className={activeLink === 'terms-of-service' ? 'active' : 'unactive'}>Términos y condiciones</li>
                 </NavLink>
                 <NavLink to='/contact' onClick={() => handleLinkClick('contact')}>
-                  <li className={activeLink === 'contact' ? 'active' : ''}>Contacto</li>
+                  <li className={activeLink === 'contact' ? 'active' : 'unactive'}>Contacto</li>
                 </NavLink>
               </ul>
             </div>
           </div>
           <div className="div3">
-            <h1>Contáctenos</h1>
+            <h1 className="title">Contáctenos</h1>
 
             <div className="icon-container">
               <IoLocationSharp className="icons" />
-              <p style={{ fontWeight: 'bolder', fontSize: '20px' }}>Monte Hermoso - Pcia. de Buenos Aires.</p>
+              <p className="text" style={{ fontWeight: 'bolder', fontSize: '20px' }}>Monte Hermoso - Pcia. de Buenos Aires.</p>
             </div>
             <div className="icon-container">
               <MdPhoneIphone className="icons" />
-              <p style={{ fontWeight: 'bolder', fontSize: '20px' }}>2921 49-6693</p>
+              <p className="text" style={{ fontWeight: 'bolder', fontSize: '20px' }}>2921 49-6693</p>
             </div>
             <div className="icon-container">
               <MdEmail className="icons" />
-              <p style={{ fontWeight: 'bolder', fontSize: '20px' }}>info@myconstruction.com.ar</p>
+              <p className="text" style={{ fontWeight: 'bolder', fontSize: '20px' }}>info@myconstruction.com.ar</p>
             </div>
             <div className="social-icon-container">
               <a href='https://www.youtube.com/channel/UCMCvyhOssOeKd3D5jbVsLvw' target="_blank">
@@ -73,7 +73,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="copyright">
-          <p style={{ fontSize: '16px' }}>Copyright © MyConstruction 2020</p>
+          <p className="text" style={{ fontSize: '16px' }}>Copyright © MyConstruction 2020</p>
         </div>
     </footer>
   )

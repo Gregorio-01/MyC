@@ -8,9 +8,9 @@ export const MyCheckbox = ({label,...props}) => {
   return (
 
     <>
-      <label className="form-label">
+     <label onMouseOver={(e) => e.target.style.textDecoration = 'underline'} onMouseOut={(e) => e.target.style.textDecoration = 'none'}>
       <input type="checkbox" {...field} {...props} />
-         {label}
+          {label}
           </label>
           <ErrorMessage name={props.name} component='span'  className="form-error"/>
           <br/>

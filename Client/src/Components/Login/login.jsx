@@ -1,11 +1,47 @@
 import { Formik, Field, Form, ErrorMessage } from 'formik'
 import * as yup from 'yup'
 import './login.css'
+import 'animate.css';
+import { useEffect, useState } from 'react';
 
 const Login = () => {
 
+
+
   return (
     <div className="login-container">
+      <div className='card-container'>
+        {/* Aquí empieza la primera card */}
+        <div className='login-card plataforma'>
+          <h2 >La Plataforma</h2>
+          <br/>
+          <br/>
+        <div className="card-content">
+          <p >Nuestro sistema permite al usuario tener un ecosistema 
+          de trabajo en el cual puede disponer de diversas herramientas 
+          como cursos, códigos de edificación, libros constructivos, charlas...</p>
+          <br/>
+          <br/>
+          <button className='btn-login'>Más info</button>
+         </div>
+        </div>
+      
+        {/* Aquí empieza la segunda card */}
+        <div className="login-card beneficios">
+          <h2 >Beneficios</h2>
+          <br/>
+          <br/>
+        <div className="card-content">
+          <p >Los Beneficios de ser asociado de My Construction,
+           se generan a partir de la conexión de la plataforma con constructoras,
+            clientes e inmobiliarias...</p>
+          <br/>
+          <br/>
+          <button className='btn-login'>Más info</button>
+         </div> 
+        </div>
+      </div>
+
       <Formik
         className="login__formulario"
         initialValues={{
@@ -19,22 +55,24 @@ const Login = () => {
           email: yup
             .string()
             .email('El correo electrónico no es válido')
-            .required('Debes ingresar tu correo electronico'),
+            .required('Debes ingresar tu correo electrónico'),
           password: yup
             .string()
-            .min(8, 'Minimo debe tener 8 caracteres')
-            .max(10, 'Maximo 10 debe caracteres')
+            .min(8, 'Mínimo debe tener 8 caracteres')
+            .max(10, 'Máximo 10 caracteres')
             .required('El password es requerido'),
         })}
       >
         {(formik) => (
           <div className="form-container">
+            {/* Aquí empieza la primera card */}
             <Form className="form">
-
               <label htmlFor="email">Usuario</label>
               <Field
-              className="input-field" 
-              name="email" placeholder="Enter your Email" />
+                className="input-field" 
+                name="email" 
+                placeholder="Ingresa tu correo electrónico" 
+              />
               <ErrorMessage name="email" component="span" className="form-error"/>
               <br/>
 
@@ -44,7 +82,7 @@ const Login = () => {
                 type="password"
                 id="password"
                 name="password"
-                placeholder="Enter your Password"
+                placeholder="Ingresa tu contraseña"
               />
               <ErrorMessage name="password" component="span" className="form-error"/>
               <br/>
@@ -58,10 +96,10 @@ const Login = () => {
               </button>
 
               <a className="forgot-password" href="#">
-                Te olvidaste tu contraseña?
+                ¿Olvidaste tu contraseña?
               </a>
               <a className="forgot-password" href="#">
-                ¿Aun no tienes una cuenta?
+                ¿Aún no tienes una cuenta?
               </a>
             </Form>
           </div>

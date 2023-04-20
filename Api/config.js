@@ -9,3 +9,4 @@ export const CL_URL = process.env.CL_URL;
 export const CL_CLOUD_NAME = process.env.CL_CLOUD_NAME;
 export const CL_API_KEY = process.env.CL_API_KEY;
 export const CL_API_SECRET = process.env.CL_API_SECRET;
+export const SECRET_KEY= process.env.SECRET_KEY;
