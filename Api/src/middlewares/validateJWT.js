@@ -4,12 +4,8 @@ import User from '../models/Users.js'
 import { SECRET_KEY } from '../../config.js';
 
 export const validateJWT = async (req = request, res = response, next) => {
-  const token = req.header('token')
-/*   console.log(SECRET_KEY,'clave secreta')
-  console.log(token,'segunda validacion')
-  const {id} = jwt.verify(token,SECRET_KEY)
-  console.log(id,'el verify')
-  next() */
+    
+  const token = req.headers.token
 
   if (!token) {
       return res.status(401).json({ msg: 'no hay token' })
@@ -25,14 +21,9 @@ export const validateJWT = async (req = request, res = response, next) => {
         msg: 'token no valido, usuario no activo / no hay usuario',
       })
     }
-    //verificar si el uid tiene isActive: true
-/*     if (!usuario.isActive) {
-      return res.status(401).json({
-        msg: 'token no valido, usuario no activo',
-      })
-    } */
+
    
-    req.usuario = usuario
+    req.usuario = usuario 
 
     next()
   } catch (err) {

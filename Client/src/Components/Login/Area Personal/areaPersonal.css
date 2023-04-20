@@ -25,6 +25,10 @@
   width: 50px;
 }
 
+.navbar__img img:hover{
+  cursor: pointer;
+}
+
 .header__enlaces {
   font-size: 2rem;
 }
@@ -60,39 +64,65 @@
     justify-content: space-between;
 }
 
-.profilePic {
-  background-image: url(https://myconstruction.com.ar/wp-content/uploads/2019/02/LOGO-512.png);
-}
 /*   
 .header__user {
     justify-content: space-between;
 } */
   
 .header__datos {
-    display: flex;
+    /* display: flex;
     margin-top: 200px;
     margin-left: 2rem;
-    align-items: center;
+    /* align-items: center; */
     position: relative;
+    top: 2rem;
+    left: 2rem;
+    height: 100px;
+    width: 314px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.headerDatosText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.headerDatosText a{
+  color: var(--colorBlanco);
+  font-size: 15px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  text-shadow: none;
+}
+
+.headerDatosText a:hover{
+  cursor: pointer;
+  text-decoration: underline;
 }
   
-.header__datos h1 {
+.headerDatosText h1 {
     color: var(--colorBlanco);
 }
   
-.header__datos div {
+.profilePic {
     width: 160px;
     height: 160px;
     border-radius: 12rem;
-    margin-right: 2rem;
+    /* margin-right: 2rem; */
     /* background-image: url(); */
-    background-size: cover;
-    background-position: center center;
+    /* background-size: cover; */
+    /* background-position: center center; */
 }
   
 .header__msjBtn {
-    margin-right: 2rem;
-    margin-top: 2rem;
+  position: relative;
+  top: 2rem;
+  right: 2rem;
+  height: 50px;
 }
   
 .header__msjBtn button {
@@ -102,6 +132,11 @@
     padding: 0;
     margin: auto;
     background-color: transparent;
+    border: none;
+}
+
+.header__msjBtn button:hover{
+  cursor: pointer;
 }
   
 .header__msjBtn button img {
@@ -267,6 +302,7 @@
   height: 20px;
   padding-top: 10px;
   margin-right: 0px;
+  z-index: 99;
 }
 
 .Dropdown h4 {
@@ -277,8 +313,10 @@
 
 @media (min-width: 890px ) and (max-width: 1200px ){
     .header__datos {
-    margin-top: 200px;
-    margin-left: 2rem;
+    /* margin-top: 200px; */
+    /* margin-left: 2rem; */
+    top: 2rem;
+    left: 2rem;
     align-items: center;
     position: relative;
     font-size: 1.4rem;

@@ -3,7 +3,7 @@ import User from '../../models/Users.js';
 export const getAllUsers = async (req, res) => {
   
   
-  if(req.usuario.admin===false){
+  if(req.usuario?.admin===false){
    return  res.status(401).send('usuario no autorizado')
   }
 
