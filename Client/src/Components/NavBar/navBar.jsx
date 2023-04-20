@@ -18,8 +18,8 @@ const NavBar = () => {
 
   useEffect(() => {
     location.pathname === '/login/AreaPersonal' ? setShow(false) : setShow(true);
-    console.log(location);
-    console.log(show);
+    // console.log(location);
+    // console.log(show);
   }, [location]);
 
   return (
