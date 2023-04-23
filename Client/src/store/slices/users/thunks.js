@@ -24,6 +24,7 @@ export const getUsers = () => {
         }) ) */
   }
 }
+
 export const loginUser = (payload) => {
   return async (dispatch) => {
      dispatch ( startLoadingUsers() );
