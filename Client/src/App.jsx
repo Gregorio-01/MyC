@@ -7,7 +7,7 @@ import Projects from "./Components/Projects/projects";
 import Footer from "./Components/Footer/footer";
 import NavBar from "./Components/NavBar/navBar";
 import News from "./Components/News/news";
-import AreaPersonal from "./Components/Login/Area Personal/areaPersonal";
+import AreaPersonal from "./Components/Login/AreaPersonal/areaPersonal";
 import "./App.css";
 import { ReduxComponent } from "./Components/ReducComponent/ReduxComponent"
 import { Register } from "./Components/Register/Register"
