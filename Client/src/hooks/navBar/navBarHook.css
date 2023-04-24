@@ -1,0 +1,80 @@
+:root {
+    --colorNaranjaClaro: #FF6A0E;
+    --colorNaranjaOscuro: #D65304;
+    --colorAzulOscuro: #0075FF;
+    --colorAzulClaro: #01FFFF;
+    --colorGrisOscuro: #353535;
+    --colorAmarrilo: #FAFF00;
+    --colorBlanco: #fff;
+    --colorNegroGris: #1A1A1A;
+    --colorRojo: red;
+    --colorNegro: rgb(0, 0, 0);
+    --fuenteprincipal: 'Nunito Sans';
+}
+
+.header__container {
+display: flex;
+align-items: center;
+width: 852px;
+margin-left: auto;
+justify-content: space-between;
+}
+
+.header__img img {
+width: 300px;
+height: auto;
+}
+
+.header__enlaces {
+    font-size: 2rem;
+  }
+  
+  .header__enlaces a {
+    color: var(--colorNegro);
+    margin-right: 2rem;
+  }
+
+  .navbar{
+    display: flex;
+      align-items: center;
+  }
+
+.navbar__img img{
+    width: 50px;
+  }
+  
+  .navbar__img img:hover{
+    cursor: pointer;
+  }
+
+.Dropdown {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    top: 6.6rem;
+    right: 0;
+    width: 130px;
+    height: 14rem;
+    padding: 15px;
+    padding-top: 1px;
+    background-color: white;
+  }
+  
+  .Dropdown a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 20px;
+    padding-top: 10px;
+    margin-right: 0px;
+    z-index: 99;
+  }
+  
+  .Dropdown h4 {
+    position: absolute;
+    font-size: 1rem;
+    font-weight: 400;
+  }

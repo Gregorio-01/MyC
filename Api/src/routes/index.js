@@ -4,6 +4,7 @@ import project from './projects.routes.js';
 import category from './category.routes.js';
 import login  from './login.routes.js';
 import associates from './associates.routes.js'
+import materials from './materials.routes.js';
 
 const router = Router();
 
@@ -12,6 +13,7 @@ router.use('/project', project);
 router.use('/category', category);
 router.use('/login', login);
 router.use('/associates', associates);
+router.use('/material', materials);
 
 
 export default router; 

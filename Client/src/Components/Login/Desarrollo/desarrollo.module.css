@@ -1,0 +1,42 @@
+.divPresentacion{
+    background-image: url("https://myconstruction.com.ar/colaboradores/img/backgroundDesarrollo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: auto;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-items: baseline;
+}
+
+.divPresentacion h1 {
+    color: #ffffff;
+    font-size: 50px;
+    width: 500px;
+    margin: 0 auto;
+    /* margin-top: 15rem; */
+    text-align: center;
+}
+
+.divGeneral{
+    background-color: rgba(255, 149, 149, 0.62);
+    height: 800px;
+}
+
+.divCursos{
+    display: flex;
+    flex-direction: column;
+}
+
+.divTexto{
+    display: flex;
+    align-items: flex-start;
+}
+
+.divCarrousel{
+    height: 20px;
+    border: 2px solid red;
+}
