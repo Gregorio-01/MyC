@@ -38,10 +38,18 @@ export const loginUser = (payload) => {
   }
 };
 
-export const putUser = (updates) => {
-  return async (dispatch) => {
+export const putUser = (updates, id) => {
+  return async () => {
     console.log(updates);
-    const updatedUser = await usersApi.put('/:id', updates);
-    dispatch( setActualUser(updatedUser.data));
+    const updatedUser = await userApi.put(`/${id}`, updates);
   }
 };
+
+export const getUserById = (id) => {
+  return async (dispatch) => {
+    console.log(id);
+    const userById = await userApi.get(`/${id}`);
+    console.log(userById);
+    dispatch(setActualUser(userById.data));
+  }
+}

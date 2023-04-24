@@ -1,0 +1,25 @@
+.uploadProjectContainer {
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+
+    .button {
+        /* margin-left: 12px; */
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        color: #fff;
+        background-color: orange;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+    .button:hover {
+        /* border: 2px solid #604020; */
+        color: orange;
+        background-color: rgb(255, 218, 151);
+    }

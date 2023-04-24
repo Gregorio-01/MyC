@@ -27,7 +27,7 @@ export async function putUser(req, res) {
     if (!updatedUser) {
       return res.status(404).json({ message: 'Usuario no encontrado' });
     }
-    return res.json(updatedUser);
+    return res.send('Usuario modificado');
   } catch (error) {
     console.error(error);
     return res.status(500).json({ message: 'Error al actualizar usuario' });

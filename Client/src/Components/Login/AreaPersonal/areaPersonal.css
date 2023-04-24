@@ -87,6 +87,7 @@
 .headerDatosText {
   display: flex;
   flex-direction: column;
+  row-gap: 10px;
   align-items: center;
   justify-content: space-around;
 }
@@ -106,6 +107,11 @@
   
 .headerDatosText h1 {
     color: var(--colorBlanco);
+    font-size: 2rem;
+}
+
+.modifyInfo:hover {
+  cursor: pointer;
 }
   
 .profilePic {
@@ -116,6 +122,10 @@
     /* background-image: url(); */
     /* background-size: cover; */
     /* background-position: center center; */
+}
+
+.modifyImage:hover {
+  cursor: pointer;
 }
   
 .header__msjBtn {
@@ -199,15 +209,21 @@
 
 .main__container {
     display: flex;
+    flex-direction: row;
+    column-gap: 50px;
     justify-content: center;
     align-items: center;
 }
 
 .proyectos__container {
-    width: 700px;
-    background-color: white;
-    padding: 2rem;
-    margin-right: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 700px;
+  background-color: white;
+  padding: 2rem;
+  margin-right: 5rem;
 }
   
 .proyectos__container h2 {
@@ -216,12 +232,17 @@
     font-size: 2rem;
     margin-top: 0;
     margin-bottom: 2rem;
+    transform: none;
 }
 
 .proyectos__button {
     display: flex;
     width: 600px;
     margin: auto;
+}
+
+.proyectos__button button:hover {
+  cursor: pointer;
 }
 
 .proyectos__button button {
@@ -235,11 +256,10 @@
   
 .proyectos__button button:last-of-type {
     background-color: green;
-    
 }
 
 .card {
-    width: 210px;
+    width: 240px;
     height: 254px;
     color: white;
     display: grid;
@@ -247,7 +267,7 @@
     gap: 5px;
     overflow: visible;
     background-color: var(--colorGrisOscuro);
-    padding: 1rem;
+    padding: 10px;
 }
 
 .card .item {
@@ -261,8 +281,9 @@
 }
 
 .item:hover {
-    transform: scale(0.95);
-    transition: all 0.3s;
+  cursor: pointer;
+  transform: scale(0.95);
+  transition: all 0.3s;
 }
 
 .item svg {
@@ -272,11 +293,17 @@
 }
 
 .item--1 {
-    background: whitesmoke;
+  color: black;
+  background: whitesmoke;
+}
+
+.item--2 span {
+  color: black;
 }
   
 .item--2 {
-    background: whitesmoke;
+  color: black;
+  background: whitesmoke;
 }
 
 .Dropdown {
