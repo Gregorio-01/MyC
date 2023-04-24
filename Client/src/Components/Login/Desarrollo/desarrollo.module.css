@@ -22,21 +22,50 @@
 }
 
 .divGeneral{
-    background-color: rgba(255, 149, 149, 0.62);
+    /* background-color:rgb(150, 126, 126); */
+    background-color: black;
     height: 800px;
 }
 
 .divCursos{
     display: flex;
     flex-direction: column;
+    margin: 0 15rem 0 15rem;
 }
 
 .divTexto{
     display: flex;
     align-items: flex-start;
+    margin-top: 5rem;
+    /* height: 80px; */
 }
 
-.divCarrousel{
-    height: 20px;
-    border: 2px solid red;
+.divTexto h3{
+    color: #ffffff;
 }
+
+
+
+.imgSlide{
+    width: 260px;
+    height: 260px;
+    position: relative;
+}
+
+.swiper_name_inicial {
+    z-index: 100;
+    position: absolute;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    color: transparent;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    transition: color 0.3s ease;
+  }
+
+
+  .swiper_container:hover .swiper_name_inicial{
+    color: #ffffff;
+  }
