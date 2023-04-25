@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import './uploadProject.css';
+import { createProject } from "../../../store/slices/users/thunks";
 
 const UploadProject = () => {
 
@@ -10,33 +11,46 @@ const UploadProject = () => {
 
     const [project, setProject] = useState({
         name: '',
-        file: {},
+        img: {},
+        description: '',
+        categories: '',
     });
-    function handleNameChange(e) {
+    function handleChange(e) {
         e.preventDefault();
         setProject({
             ...project,
-            name: e.target.value,
+            [e.target.name]: [e.target.value],
         })
     };
     function handleFileChange(e) {
         e.preventDefault();
         setProject({
             ...project,
-            file: e.target.files[0],
+            img: e.target.files[0],
         })
     };
     function uploadProject() {
-        dispatch();
+        // dispatch(createProject(project));
     };
 
     return (
         <div className="uploadProjectContainer">
             <div>
-                <input className="input" value={project.name} onChange={(e) => handleNameChange(e)} placeholder="Nombre del proyecto"/>
+                <input className="input" name="name" value={project.name} onChange={(e) => handleChange(e)} placeholder="Nombre del proyecto"/>
             </div>
             <div className="inputContainer">
-                <input className="input" type="file" placeholder="Elegir archivo"/>
+                <input className="input" type="file" onChange={handleFileChange} placeholder="Elegir archivo"/>
+            </div>
+            <div>
+                <input className="input" name="description" onChange={(e) => handleChange(e)} placeholder="Descripción"/>
+            </div>
+            <div>
+                <select className="input" name='categories' onChange={(e) => handleChange(e)}>
+                    <option selected={true} disabled='disabled'>Categorías</option>
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                </select>
             </div>
             <div className="buttonContainer">
                 <button className="button" onClick={uploadProject}>Subir proyecto</button>
