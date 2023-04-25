@@ -25,6 +25,10 @@
   width: 50px;
 }
 
+.navbar__img img:hover{
+  cursor: pointer;
+}
+
 .header__enlaces {
   font-size: 2rem;
 }
@@ -60,39 +64,75 @@
     justify-content: space-between;
 }
 
-.profilePic {
-  background-image: url(https://myconstruction.com.ar/wp-content/uploads/2019/02/LOGO-512.png);
-}
 /*   
 .header__user {
     justify-content: space-between;
 } */
   
 .header__datos {
-    display: flex;
+    /* display: flex;
     margin-top: 200px;
     margin-left: 2rem;
-    align-items: center;
+    /* align-items: center; */
     position: relative;
+    top: 2rem;
+    left: 2rem;
+    height: 100px;
+    width: 314px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.headerDatosText {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.headerDatosText a{
+  color: var(--colorBlanco);
+  font-size: 15px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  text-shadow: none;
+}
+
+.headerDatosText a:hover{
+  cursor: pointer;
+  text-decoration: underline;
 }
   
-.header__datos h1 {
+.headerDatosText h1 {
     color: var(--colorBlanco);
+    font-size: 2rem;
+}
+
+.modifyInfo:hover {
+  cursor: pointer;
 }
   
-.header__datos div {
+.profilePic {
     width: 160px;
     height: 160px;
     border-radius: 12rem;
-    margin-right: 2rem;
+    /* margin-right: 2rem; */
     /* background-image: url(); */
-    background-size: cover;
-    background-position: center center;
+    /* background-size: cover; */
+    /* background-position: center center; */
+}
+
+.modifyImage:hover {
+  cursor: pointer;
 }
   
 .header__msjBtn {
-    margin-right: 2rem;
-    margin-top: 2rem;
+  position: relative;
+  top: 2rem;
+  right: 2rem;
+  height: 50px;
 }
   
 .header__msjBtn button {
@@ -102,6 +142,11 @@
     padding: 0;
     margin: auto;
     background-color: transparent;
+    border: none;
+}
+
+.header__msjBtn button:hover{
+  cursor: pointer;
 }
   
 .header__msjBtn button img {
@@ -164,15 +209,22 @@
 
 .main__container {
     display: flex;
+    flex-direction: row;
+    column-gap: 50px;
     justify-content: center;
     align-items: center;
 }
 
 .proyectos__container {
-    width: 700px;
-    background-color: white;
-    padding: 2rem;
-    margin-right: 5rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  align-items: center;
+  justify-content: center;
+  width: 700px;
+  background-color: white;
+  padding: 20px;
+  margin-right: 5rem;
 }
   
 .proyectos__container h2 {
@@ -180,7 +232,8 @@
     text-align: center;
     font-size: 2rem;
     margin-top: 0;
-    margin-bottom: 2rem;
+    /* margin-bottom: 2rem; */
+    transform: none;
 }
 
 .proyectos__button {
@@ -189,22 +242,28 @@
     margin: auto;
 }
 
-.proyectos__button button {
-    background-color: var(--colorNaranjaOscuro);
-    width: 250px;
-    padding: .8rem;
-    margin: auto;
-    color: var(--colorBlanco);
-    border-radius: .6rem;
+.proyectos__button button:hover {
+  cursor: pointer;
 }
-  
-.proyectos__button button:last-of-type {
-    background-color: green;
-    
+
+.proyectos__button button {
+  width: 250px;
+  padding: .8rem;
+  margin: auto;
+  color: var(--colorBlanco);
+  border-radius: .6rem;
+}
+
+.seeAll {
+  background-color: var(--colorNaranjaOscuro);
+}
+
+.upload {
+  background-color: green;
 }
 
 .card {
-    width: 210px;
+    width: 240px;
     height: 254px;
     color: white;
     display: grid;
@@ -212,7 +271,7 @@
     gap: 5px;
     overflow: visible;
     background-color: var(--colorGrisOscuro);
-    padding: 1rem;
+    padding: 10px;
 }
 
 .card .item {
@@ -226,8 +285,9 @@
 }
 
 .item:hover {
-    transform: scale(0.95);
-    transition: all 0.3s;
+  cursor: pointer;
+  transform: scale(0.95);
+  transition: all 0.3s;
 }
 
 .item svg {
@@ -237,11 +297,17 @@
 }
 
 .item--1 {
-    background: whitesmoke;
+  color: black;
+  background: whitesmoke;
+}
+
+.item--2 span {
+  color: black;
 }
   
 .item--2 {
-    background: whitesmoke;
+  color: black;
+  background: whitesmoke;
 }
 
 .Dropdown {
@@ -267,6 +333,7 @@
   height: 20px;
   padding-top: 10px;
   margin-right: 0px;
+  z-index: 99;
 }
 
 .Dropdown h4 {
@@ -277,8 +344,10 @@
 
 @media (min-width: 890px ) and (max-width: 1200px ){
     .header__datos {
-    margin-top: 200px;
-    margin-left: 2rem;
+    /* margin-top: 200px; */
+    /* margin-left: 2rem; */
+    top: 2rem;
+    left: 2rem;
     align-items: center;
     position: relative;
     font-size: 1.4rem;

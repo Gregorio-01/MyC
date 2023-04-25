@@ -1,10 +1,46 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import './areaPersonal.css';
 import {Link} from 'react-router-dom';
+import { useDispatch, useSelector } from "react-redux";
+import useModal from '../../../hooks/useModal/useModal';
+import ModifyInfo from "./modifyInfo";
+import ModifyImage from "./modifyImage";
+import UploadProject from "./uploadProject";
+import UserProjects from "./UserProjects";
+import { getUserProjects } from "../../../store/slices/users/thunks";
 
 export default function AreaPersonal () {
 
+    const userData = JSON.parse(window.localStorage.getItem('userData'));
+    console.log(userData);
+
+    const dispatch = useDispatch();
+    const [ModalComponent, openModal, closeModal] = useModal();
+    const [ModalComponent2, openModal2, closeModal2] = useModal();
+    const [ModalComponent3, openModal3, claseModal3] = useModal();
+    // const [ModalComponent4, openModal4, claseModal4] = useModal();
+
+    const projects = useSelector(store => store.users.projects);
+    const previewProjects = [projects[0], projects[1]];
+    console.log(previewProjects)
+
     const [showDd, setShowDd] = useState(false);
+
+    const [image, setImage] = useState('');
+    const [loading, setLoading] = useState(false);
+
+    const user = useSelector((store) => store.users.actualUser);
+    // const imageUrl = useSelector((store) => store.users.actualUser.img);
+
+    useEffect(() => {
+        dispatch(getUserProjects(45));
+    }, []);
+
+    // useEffect(() => {
+    //     // setLoading(false);
+    //     console.log(user);
+    //     dispatch(getUserProjects(45));
+    // }, []);
 
     return (
         <div>
@@ -20,8 +56,8 @@ export default function AreaPersonal () {
                         <Link to="/contact">
                             <a href="">Contacto</a>
                         </Link>
-                        <a onClick={() => setShowDd((prev) => !prev)} className='navbar__img' id='btnNavNormal'>
-                            <img src="https://res.cloudinary.com/do0gmouxr/image/upload/v1680739240/Pagina%20Interna/menu_inpu5v.png" alt="menu"/>
+                        <a onClick={() => setShowDd((prev) => !prev)} className='navbar__img'>
+                            <img src='https://res.cloudinary.com/do0gmouxr/image/upload/v1680739240/Pagina%20Interna/menu_inpu5v.png' alt="menu"/>
                         </a>
                         {
                             showDd && (
@@ -50,8 +86,24 @@ export default function AreaPersonal () {
                 <div className="containerNormal" id="containerNormal"> </div>
                 <div className="header__user">
                     <div id="datosContainer" className="header__datos">
-                        <div className="profilePic" ></div>
-                        <h1>USUARIO X</h1>
+                        <div className="profilePic">
+                            <img className="profilePic" src={user.img ? user.img : 'https://res.cloudinary.com/do0gmouxr/image/upload/v1680739240/Pagina%20Interna/logoSinFondo_lbttlj.png'} alt=''/>
+                            <div>
+                                <button className="modifyImage" onClick={openModal2}>Cambiar imagen</button>
+                            </div>
+                            <ModalComponent2>
+                                <ModifyImage />
+                            </ModalComponent2>
+                        </div>
+                        <div className="headerDatosText">
+                            <h1>{user.name || 'Usuario X'}</h1>
+                            <div>
+                            <button className="modifyInfo" onClick={openModal}>Modificar información</button>
+                            </div>
+                        </div>
+                        <ModalComponent>
+                            <ModifyInfo />
+                        </ModalComponent>
                     </div>
                     <div className="header__msjBtn">
                         <button id="btnMensajes"> <img src="https://res.cloudinary.com/do0gmouxr/image/upload/v1680739240/Pagina%20Interna/mensaje_dnkfbc.png" alt="" /> </button>
@@ -63,19 +115,43 @@ export default function AreaPersonal () {
                 <section className="main">
                     <div className="main__container">
                         <div className="proyectos__container">
-                            <h2>Mis ultimos proyectos</h2>
-                            <div id="proyectosContainer">
+                            <div>
+                                <h2>Mis ultimos proyectos</h2>
                             </div>
+                            {
+                                previewProjects[0]? (previewProjects.map(project => { return (
+                                    <div className="container">
+                                        <div className="imageContainer">
+                                            <img className="projectImage" src={project.img[0]}/>
+                                        </div>
+                                        <div className="textContainer">
+                                            <div className="titleContainer">
+                                                <h1 className="title">{project.name}</h1>
+                                            </div>
+                                            <div className="descriptionContainer">
+                                                <h6 className="description">{project.description}</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                )})) : <div className="noProjectsDiv">
+                                        <h1>No tenes proyectos!</h1>
+                                    </div>
+                            }
+                            {/* <UserProjects projects={[projects[0], projects[1]]}/> */}
                             <div className="proyectos__button">
-                                <button id="btnVer">Ver todos</button>
-                                <button id="btnUpload">Subir nuevo proyecto</button>
+                                <Link to='/login/areaPersonal/proyectos'>
+                                    <button id="btnVer" className="seeAll">Ver todos</button>
+                                </Link>
+                                <button id="btnUpload" className='upload' onClick={openModal3}>Subir nuevo proyecto</button>
+                                <ModalComponent3>
+                                    <UploadProject />
+                                </ModalComponent3>
                                 <div id="backgroundTodos">
                                 </div>
                             </div>
                         </div>
                         <div>
-                            <div id="cardStats" className="card">    
-                                {/* <div class="card"> */}
+                            <div id="cardStats" className="card">
                                     <div className="item item--1">
                                     <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"></path><path fill="rgba(149,149,255,1)" d="M17 15.245v6.872a.5.5 0 0 1-.757.429L12 20l-4.243 2.546a.5.5 0 0 1-.757-.43v-6.87a8 8 0 1 1 10 0zm-8 1.173v3.05l3-1.8 3 1.8v-3.05A7.978 7.978 0 0 1 12 17a7.978 7.978 0 0 1-3-.582zM12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"></path></svg>
                                     <span className="quantity"> 90+ </span>
@@ -95,22 +171,11 @@ export default function AreaPersonal () {
                                     <span className="quantity"> 30+ </span>
                                     <span className="text text--4"> Animations </span>
                                     </div>
-                                {/* </div> */}
                             </div>
                         </div>
                     </div>
-
                 </section>
             </main>
-            {/* <footer class="footer">
-                <div class="footer__container d-flex">
-                    <h4>"La unidad vale por su entorno"</h4>
-                    <a href="./terminosYcondiciones.html">Términos y Condiciones</a>
-                </div>
-            </footer>
-            <script src="../js/navbar.js"></script>
-            <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-            <script src="../js/areaPersonal.js"></script> */}
         </div>
     );
 };
