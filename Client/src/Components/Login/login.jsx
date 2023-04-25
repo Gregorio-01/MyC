@@ -13,6 +13,7 @@ const Login = () => {
   return (
     <div className="login-container">
       <div className='card-container'>
+        {/* Aquí empieza la primera card */}
       <Formik
         className="login__formulario"
         initialValues={{
@@ -24,7 +25,7 @@ const Login = () => {
           dispatch( loginUser(values))
         }}
         validationSchema={yup.object({
-          mail: yup
+          email: yup
             .string()
             .email('El correo electrónico no es válido')
             .required('Debes ingresar tu correo electrónico'),
@@ -39,13 +40,13 @@ const Login = () => {
           <div className="form-container">
             {/* Aquí empieza la primera card */}
             <Form className="form">
-              <label htmlFor="mail">Usuario</label>
+              <label htmlFor="email">Usuario</label>
               <Field
                 className="input-field" 
-                name="mail" 
+                name="email" 
                 placeholder="Ingresa tu correo electrónico" 
               />
-              <ErrorMessage name="mail" component="span" className="form-error"/>
+              <ErrorMessage name="email" component="span" className="form-error"/>
               <br/>
 
               <label htmlFor="password">Contraseña</label>
@@ -74,7 +75,9 @@ const Login = () => {
                 ¿Aún no tienes una cuenta?
               </a>
             </Form>
-        {/* Aquí empieza la primera card */}
+          </div>
+        )}
+      </Formik>
         <div className='login-card plataforma'>
           <h2 >La Plataforma</h2>
           <br/>
@@ -103,9 +106,6 @@ const Login = () => {
           <button className='btn-login'>Más info</button>
          </div> 
         </div>
-          </div>
-        )}
-      </Formik>
       </div>
 
     </div>

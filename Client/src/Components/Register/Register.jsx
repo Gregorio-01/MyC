@@ -16,7 +16,7 @@ export const Register = () => {
 
 
   return (
-    <div className={styles.container2}>
+    <div className={!styles.container2}>
       {' '}
       {/* Agregar la clase para los estilos del contenedor */}
       <Formik

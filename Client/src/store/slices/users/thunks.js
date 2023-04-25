@@ -1,5 +1,5 @@
 import axios, { Axios } from "axios";
-import userApi, { loginApi, projectApi} from "../../../API/usersAPI";
+import  {userApi, loginApi, projectApi} from "../../../API/usersAPI";
 import { setProjects, setUsers, setActualUser, startLoadingUsers } from "./userSlice";
 
 //esta son las llamadas asicronicas que utilizan las acciones comunes una vez que se resuelven
