@@ -9,7 +9,7 @@ import { generateJWT } from '../../helpers/generateJWT.js';
 
 
 export const loginUser = async (req, res = response) => {
-  console.log(req.body,'hola que tal')
+  //console.log(req.body,'hola que tal')
   const { mail , password } = req.body
 
   console.log(mail, password)
@@ -17,7 +17,7 @@ export const loginUser = async (req, res = response) => {
   try {
     //verificar si el modelo existe
     const usuario = await User.findOne({ email: mail })
-    
+    console.log(usuario)
     if (!usuario) {
       return res
         .status(400)

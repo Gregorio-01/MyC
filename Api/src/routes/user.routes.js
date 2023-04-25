@@ -14,6 +14,6 @@ user.get('/email/:email', getUserByEmail);
 user.get('/:id', getOneUser);
 user.post('/', postUser);
 user.delete('/:id', deleteUser);
-user.put('/:id', putUser);
+user.put('/:id',putUser);
 
 export default user;
