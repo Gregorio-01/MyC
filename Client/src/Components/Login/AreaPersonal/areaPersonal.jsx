@@ -2,22 +2,45 @@ import React, { useEffect, useState } from "react";
 import './areaPersonal.css';
 import {Link} from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
+import useModal from '../../../hooks/useModal/useModal';
+import ModifyInfo from "./modifyInfo";
+import ModifyImage from "./modifyImage";
+import UploadProject from "./uploadProject";
+import UserProjects from "./UserProjects";
+import { getUserProjects } from "../../../store/slices/users/thunks";
 
 export default function AreaPersonal () {
 
+    const userData = JSON.parse(window.localStorage.getItem('userData'));
+    console.log(userData);
+
     const dispatch = useDispatch();
+    const [ModalComponent, openModal, closeModal] = useModal();
+    const [ModalComponent2, openModal2, closeModal2] = useModal();
+    const [ModalComponent3, openModal3, claseModal3] = useModal();
+    // const [ModalComponent4, openModal4, claseModal4] = useModal();
+
+    const projects = useSelector(store => store.users.projects);
+    const previewProjects = [projects[0], projects[1]];
+    console.log(previewProjects)
 
     const [showDd, setShowDd] = useState(false);
 
     const [image, setImage] = useState('');
     const [loading, setLoading] = useState(false);
 
-    const imageUrl = useSelector((store) => store.users.actualUser.img);
+    const user = useSelector((store) => store.users.actualUser);
+    // const imageUrl = useSelector((store) => store.users.actualUser.img);
 
     useEffect(() => {
-        setLoading(false);
-        console.log(imageUrl);
-    }, [imageUrl]);
+        dispatch(getUserProjects(45));
+    }, []);
+
+    // useEffect(() => {
+    //     // setLoading(false);
+    //     console.log(user);
+    //     dispatch(getUserProjects(45));
+    // }, []);
 
     return (
         <div>
@@ -64,17 +87,23 @@ export default function AreaPersonal () {
                 <div className="header__user">
                     <div id="datosContainer" className="header__datos">
                         <div className="profilePic">
-                            <img className="profilePic" src={imageUrl ? imageUrl : 'https://res.cloudinary.com/do0gmouxr/image/upload/v1680739240/Pagina%20Interna/logoSinFondo_lbttlj.png'} alt=''/>
-                        </div>
-                        <div>
-                            <button>Modificar información</button>
+                            <img className="profilePic" src={user.img ? user.img : 'https://res.cloudinary.com/do0gmouxr/image/upload/v1680739240/Pagina%20Interna/logoSinFondo_lbttlj.png'} alt=''/>
+                            <div>
+                                <button className="modifyImage" onClick={openModal2}>Cambiar imagen</button>
+                            </div>
+                            <ModalComponent2>
+                                <ModifyImage />
+                            </ModalComponent2>
                         </div>
                         <div className="headerDatosText">
-                            <h1>USUARIO X</h1>
-                            <Link>
-                                <h5>Modificar info</h5>
-                            </Link>
+                            <h1>{user.name || 'Usuario X'}</h1>
+                            <div>
+                            <button className="modifyInfo" onClick={openModal}>Modificar información</button>
+                            </div>
                         </div>
+                        <ModalComponent>
+                            <ModifyInfo />
+                        </ModalComponent>
                     </div>
                     <div className="header__msjBtn">
                         <button id="btnMensajes"> <img src="https://res.cloudinary.com/do0gmouxr/image/upload/v1680739240/Pagina%20Interna/mensaje_dnkfbc.png" alt="" /> </button>
@@ -86,12 +115,37 @@ export default function AreaPersonal () {
                 <section className="main">
                     <div className="main__container">
                         <div className="proyectos__container">
-                            <h2>Mis ultimos proyectos</h2>
-                            <div id="proyectosContainer">
+                            <div>
+                                <h2>Mis ultimos proyectos</h2>
                             </div>
+                            {
+                                previewProjects[0]? (previewProjects.map(project => { return (
+                                    <div className="container">
+                                        <div className="imageContainer">
+                                            <img className="projectImage" src={project.img[0]}/>
+                                        </div>
+                                        <div className="textContainer">
+                                            <div className="titleContainer">
+                                                <h1 className="title">{project.name}</h1>
+                                            </div>
+                                            <div className="descriptionContainer">
+                                                <h6 className="description">{project.description}</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                )})) : <div className="noProjectsDiv">
+                                        <h1>No tenes proyectos!</h1>
+                                    </div>
+                            }
+                            {/* <UserProjects projects={[projects[0], projects[1]]}/> */}
                             <div className="proyectos__button">
-                                <button id="btnVer">Ver todos</button>
-                                <button id="btnUpload">Subir nuevo proyecto</button>
+                                <Link to='/login/areaPersonal/proyectos'>
+                                    <button id="btnVer" className="seeAll">Ver todos</button>
+                                </Link>
+                                <button id="btnUpload" className='upload' onClick={openModal3}>Subir nuevo proyecto</button>
+                                <ModalComponent3>
+                                    <UploadProject />
+                                </ModalComponent3>
                                 <div id="backgroundTodos">
                                 </div>
                             </div>

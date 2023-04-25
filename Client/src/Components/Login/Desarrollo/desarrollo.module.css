@@ -1,0 +1,90 @@
+.divPresentacion{
+    background-image: url("https://myconstruction.com.ar/colaboradores/img/backgroundDesarrollo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: auto;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-items: baseline;
+}
+
+.divPresentacion h1 {
+    color: #ffffff;
+    font-size: 50px;
+    width: 500px;
+    margin: 0 auto;
+    /* margin-top: 15rem; */
+    text-align: center;
+}
+
+.divGeneral{
+    /* background-color:rgb(150, 126, 126); */
+    background-color: black;
+    height: 800px;
+}
+
+.divCursos{
+    display: flex;
+    flex-direction: column;
+    margin: 0 15rem 0 15rem;
+}
+
+.divTexto{
+    display: flex;
+    align-items: flex-start;
+    margin-top: 5rem;
+    /* height: 80px; */
+}
+
+.divTexto h3{
+    color: #ffffff;
+}
+
+
+
+.imgSlide{
+    width: 260px;
+    height: 260px;
+    position: relative;
+}
+
+
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120%;
+    height: 100%;
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    text-align: center;
+    transition: transform 0.3s ease 0.2s, opacity 0.3s ease 0.2s;
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  
+  .swiper_container:hover .overlay {
+    visibility: visible;
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  
+  .overlay_name {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 5px auto;
+  }
+
+  .overlay_description{
+    font-size: 14px;
+    color: white;
+    font-weight: normal;
+    margin-top: 30px;
+  }

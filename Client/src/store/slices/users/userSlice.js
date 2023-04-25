@@ -4,6 +4,7 @@ const initialState = {
   users: [],
   isLoading: false,
   actualUser: {},
+  projects: [],
 }
 
 export const usersSlice = createSlice({
@@ -20,10 +21,13 @@ export const usersSlice = createSlice({
     setActualUser: (state, action) => {
       state.actualUser = action.payload;
     },
+    setProjects: (state, action) => {
+      state.projects = action.payload;
+    }
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { setUsers, startLoadingUsers, changeUserPic, setActualUser } = usersSlice.actions
+export const { setUsers, startLoadingUsers, setActualUser, setProjects } = usersSlice.actions
 
 export default usersSlice.reducer
