@@ -1,14 +1,10 @@
-.container {
-    background-color: black;
 
-}
 
 .card-container {
     display: flex;
     height: 21rem;
     width: 19rem;
     flex-direction: column;
-    border: 1px solid black;
     background-color: antiquewhite;
     z-index: 9;
 
