@@ -1,4 +1,3 @@
-
 import styles from "./desarrollo.module.css"
 import { useEffect, useState } from "react";
 import { NavBarHook } from '../../../hooks/navBar/navBarHook'
@@ -19,8 +18,8 @@ const Desarrollo = () => {
   const dispatch = useDispatch()
   
   const divitirMaterial = () => {
-    const typeCurso = materialState.filter((cursos)=>cursos.type === "Cursos")
-    const typeArticulo = materialState.filter((cursos)=>cursos.type === "Articulo")
+    const typeCurso = materialState.filter((cursos)=>cursos.type !== "Cursos")
+    const typeArticulo = materialState.filter((cursos)=>cursos.type !== "Articulo")
     setCursos(typeCurso)
     setRecursos(typeArticulo)
   }
@@ -68,12 +67,16 @@ const Desarrollo = () => {
            recursos?.map((c) => (
             <>
             
-              <SwiperSlide  style={{ height: "200px"}} >
-                <div className={styles.swiper_container}>
-                  <div className={styles.swiper_name_inicial}>{c.name}</div>
-                  <img src={c.img} className={styles.imgSlide}/>
-                </div>
-              </SwiperSlide>
+            <SwiperSlide style={{ height: "200px" }}>
+  <div className={styles.swiper_container}> 
+  {console.log(recursos)}
+    <img src={c.img} className={styles.imgSlide} />
+    <div className={styles.overlay}>
+      <div className={styles.overlay_name}>{c.name}</div>
+      <div className={styles.overlay_description}>{c.description}</div>
+    </div>
+  </div>
+</SwiperSlide>
               
             </>
             ))
@@ -101,9 +104,18 @@ const Desarrollo = () => {
           >
            {
            cursos?.map((c) => (
-            <>
-            <SwiperSlide style={{ display:"none" }} >{c.name}</SwiperSlide>
-            <SwiperSlide style={{ height: "200px", marginLeft:"10px" }} ><img src={c.img} className={styles.imgSlide}/></SwiperSlide>
+            <>  
+            <SwiperSlide style={{ height: "200px" }}>
+  <div className={styles.swiper_container}> 
+  {console.log(recursos)}
+    <img src={c.img} className={styles.imgSlide} />
+    <div className={styles.overlay}>
+      <div className={styles.overlay_name}>{c.name}</div>
+      <div className={styles.overlay_description}>{c.description}</div>
+    </div>
+  </div>
+</SwiperSlide>
+              
             </>
             ))
             }
