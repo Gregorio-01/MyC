@@ -9,30 +9,28 @@ export const getUsers = () => {
      dispatch ( startLoadingUsers() );
 
      const {token} = JSON.parse(localStorage.getItem('userData')) 
+     
+     const users = userApi()
 
-    const instance = axios.create({
-      baseURL: 'http://localhost:3001/user',
-      headers: {'Authorization': token}
-    });
-    
-    const {data} = await instance.get()
-    console.log(data)
-     /* dispatch( setUsers({
+     const {data} =await users.get()
+
+     dispatch( setUsers({
         users:data,
-        }) ) */
+        }) )
   }
 }
 
 export const loginUser = (payload) => {
+  
   return async (dispatch) => {
+    const login = loginApi()
+    
      dispatch ( startLoadingUsers() );
-         console.log(payload,'estamos en login user')
-    const loginMyUser = await axios.post('http://localhost:3001/login',payload)
-    .then( res => localStorage.setItem('userData', JSON.stringify(res.data)))
+         
+    const {data} = await login.post('/',payload)
+
+    localStorage.setItem('userData', JSON.stringify(data))
    
-     /* dispatch( setUsers({
-        users:data,
-        }) ) */
   }
 };
 
