@@ -13,6 +13,8 @@ import { ReduxComponent } from "./Components/ReducComponent/ReduxComponent"
 import { Register } from "./Components/Register/Register"
 import Whatsappbutton from "./Components/WhatsApp/whatsappbutton";
 import Terminos from "./Components/Terminos/terminos";
+import Card from "./Components/Empresas asociadas/components/card";
+import Main from "./Components/Empresas asociadas/components/main";
 
 
 function App() {
@@ -31,6 +33,10 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/redux" element={<ReduxComponent />} />
         <Route path="/terms-of-service" element={<Terminos />} />
+        {/* rutas de prueba */}
+        <Route path="/card" element={<Card />} />
+        <Route path="/associates" element={<Main />} />
+        {/* rutas de prueba */}
       </Routes>
       <Whatsappbutton />
       <Footer />
