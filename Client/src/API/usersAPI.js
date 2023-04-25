@@ -3,7 +3,11 @@ import axios from "axios";
 
 export const loginApi = axios.create({
     baseURL: 'http://localhost:3001/login'
-})
+});
+
+export const projectApi = axios.create({
+    baseURL:'http://localhost:3001/project'
+});
 
 const userApi = () => {
     

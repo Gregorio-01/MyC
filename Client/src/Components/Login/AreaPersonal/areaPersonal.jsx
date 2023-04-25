@@ -6,6 +6,8 @@ import useModal from '../../../hooks/useModal/useModal';
 import ModifyInfo from "./modifyInfo";
 import ModifyImage from "./modifyImage";
 import UploadProject from "./uploadProject";
+import UserProjects from "./UserProjects";
+import { getUserProjects } from "../../../store/slices/users/thunks";
 
 export default function AreaPersonal () {
 
@@ -16,7 +18,11 @@ export default function AreaPersonal () {
     const [ModalComponent, openModal, closeModal] = useModal();
     const [ModalComponent2, openModal2, closeModal2] = useModal();
     const [ModalComponent3, openModal3, claseModal3] = useModal();
-    const [ModalComponent4, openModal4, claseModal4] = useModal();
+    // const [ModalComponent4, openModal4, claseModal4] = useModal();
+
+    const projects = useSelector(store => store.users.projects);
+    const previewProjects = [projects[0], projects[1]];
+    console.log(previewProjects)
 
     const [showDd, setShowDd] = useState(false);
 
@@ -27,9 +33,14 @@ export default function AreaPersonal () {
     // const imageUrl = useSelector((store) => store.users.actualUser.img);
 
     useEffect(() => {
-        // setLoading(false);
-        console.log(user);
-    }, [user]);
+        dispatch(getUserProjects(45));
+    }, []);
+
+    // useEffect(() => {
+    //     // setLoading(false);
+    //     console.log(user);
+    //     dispatch(getUserProjects(45));
+    // }, []);
 
     return (
         <div>
@@ -104,11 +115,34 @@ export default function AreaPersonal () {
                 <section className="main">
                     <div className="main__container">
                         <div className="proyectos__container">
-                            <h2>Mis ultimos proyectos</h2>
-                            {/* <div id="proyectosContainer"></div> */}
+                            <div>
+                                <h2>Mis ultimos proyectos</h2>
+                            </div>
+                            {
+                                previewProjects[0]? (previewProjects.map(project => { return (
+                                    <div className="container">
+                                        <div className="imageContainer">
+                                            <img className="projectImage" src={project.img[0]}/>
+                                        </div>
+                                        <div className="textContainer">
+                                            <div className="titleContainer">
+                                                <h1 className="title">{project.name}</h1>
+                                            </div>
+                                            <div className="descriptionContainer">
+                                                <h6 className="description">{project.description}</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                )})) : <div className="noProjectsDiv">
+                                        <h1>No tenes proyectos!</h1>
+                                    </div>
+                            }
+                            {/* <UserProjects projects={[projects[0], projects[1]]}/> */}
                             <div className="proyectos__button">
-                                <button id="btnVer">Ver todos</button>
-                                <button id="btnUpload" onClick={openModal3}>Subir nuevo proyecto</button>
+                                <Link to='/login/areaPersonal/proyectos'>
+                                    <button id="btnVer" className="seeAll">Ver todos</button>
+                                </Link>
+                                <button id="btnUpload" className='upload' onClick={openModal3}>Subir nuevo proyecto</button>
                                 <ModalComponent3>
                                     <UploadProject />
                                 </ModalComponent3>

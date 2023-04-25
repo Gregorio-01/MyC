@@ -218,11 +218,12 @@
 .proyectos__container {
   display: flex;
   flex-direction: column;
+  row-gap: 30px;
   align-items: center;
   justify-content: center;
   width: 700px;
   background-color: white;
-  padding: 2rem;
+  padding: 20px;
   margin-right: 5rem;
 }
   
@@ -231,7 +232,7 @@
     text-align: center;
     font-size: 2rem;
     margin-top: 0;
-    margin-bottom: 2rem;
+    /* margin-bottom: 2rem; */
     transform: none;
 }
 
@@ -246,16 +247,19 @@
 }
 
 .proyectos__button button {
-    background-color: var(--colorNaranjaOscuro);
-    width: 250px;
-    padding: .8rem;
-    margin: auto;
-    color: var(--colorBlanco);
-    border-radius: .6rem;
+  width: 250px;
+  padding: .8rem;
+  margin: auto;
+  color: var(--colorBlanco);
+  border-radius: .6rem;
 }
-  
-.proyectos__button button:last-of-type {
-    background-color: green;
+
+.seeAll {
+  background-color: var(--colorNaranjaOscuro);
+}
+
+.upload {
+  background-color: green;
 }
 
 .card {

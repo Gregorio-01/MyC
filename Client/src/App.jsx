@@ -14,6 +14,7 @@ import { Register } from "./Components/Register/Register"
 import Whatsappbutton from "./Components/WhatsApp/whatsappbutton";
 import Terminos from "./Components/Terminos/terminos";
 import Desarrollo from "./Components/Login/Desarrollo/Desarrollo";
+import UserProjects from "./Components/Login/AreaPersonal/UserProjects";
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
         <Route path="/login/areaPersonal" element={<AreaPersonal />} />
+        <Route path="/login/areaPersonal/proyectos" element={<UserProjects />}/>
         <Route path="/login/desarrollo" element={<Desarrollo />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/news" element={<News />} />

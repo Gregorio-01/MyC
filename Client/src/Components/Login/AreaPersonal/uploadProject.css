@@ -1,5 +1,5 @@
 .uploadProjectContainer {
-    height: 140px;
+    height: 220px;
     display: flex;
     flex-direction: column;
     row-gap: 5px;
