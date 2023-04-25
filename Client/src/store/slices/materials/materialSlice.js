@@ -10,8 +10,8 @@ export const materialSlice = createSlice({
     reducers:{
         setMaterials: (state,action) =>{
             state.materials = action.payload
-            console.log(action.payload)
-            console.log(state.materials)
+            // console.log(action.payload)
+            // console.log(state.materials)
         }
     }
 })
