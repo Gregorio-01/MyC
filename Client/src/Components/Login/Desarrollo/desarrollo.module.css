@@ -52,20 +52,39 @@
     position: relative;
 }
 
-.swiper_name_inicial {
-    z-index: 100;
+
+
+.overlay {
     position: absolute;
-    top: 50%;
-    left: 50%; 
-    transform: translate(-50%, -50%);
-    color: transparent;
-    font-size: 22px;
-    font-weight: bold;
+    top: 0;
+    left: 0;
+    width: 120%;
+    height: 100%;
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
     text-align: center;
-    transition: color 0.3s ease;
+    transition: transform 0.3s ease 0.2s, opacity 0.3s ease 0.2s;
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  
+  .swiper_container:hover .overlay {
+    visibility: visible;
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  
+  .overlay_name {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 5px auto;
   }
 
-
-  .swiper_container:hover .swiper_name_inicial{
-    color: #ffffff;
+  .overlay_description{
+    font-size: 14px;
+    color: white;
+    font-weight: normal;
+    margin-top: 30px;
   }
