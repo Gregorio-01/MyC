@@ -17,7 +17,12 @@ const ProjectSchema = new mongoose.Schema({
   categories: [{
     type: Schema.Types.ObjectId,
     ref: 'Category'
-  }]
+  }],
+  createdBy: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: true,
+  },
 });
 
 const ProjectModel = mongoose.model('Projects', ProjectSchema);

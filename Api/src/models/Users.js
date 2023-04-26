@@ -32,8 +32,20 @@ const userSchema = new mongoose.Schema({
     required: true,
     default: 0,
   },
+  projects: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Projects',
+  }],
 });
 
 const User = mongoose.model('User', userSchema);
 
 export default User;
+
+
+
+// import ProjectModel from './projectModel.js';
+
+// const userId = 'insertar_id_de_usuario_aqui';
+
+// const projects = await ProjectModel.find({ createdBy: userId }).populate('createdBy');
