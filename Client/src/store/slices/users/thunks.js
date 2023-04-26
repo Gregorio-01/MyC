@@ -1,6 +1,6 @@
 import axios, { Axios } from "axios";
 import  {userApi, loginApi, projectApi} from "../../../API/usersAPI";
-import { setProjects, setUsers, setActualUser, startLoadingUsers } from "./userSlice";
+import { setProjects, setUsers, setActualUser, setUpdatedUser, startLoadingUsers } from "./userSlice";
 
 //esta son las llamadas asicronicas que utilizan las acciones comunes una vez que se resuelven
 export const getUsers = () => {
@@ -34,10 +34,14 @@ export const loginUser = (payload) => {
   }
 };
 
-export const putUser = (updates, id) => {
-  return async () => {
+export const putUser = (updates) => {
+  return async (dispatch) => {
     console.log(updates);
-    const updatedUser = await userApi.put(`/${id}`, updates);
+    const updateUser = userApi();
+    const updatedUser = await updateUser.put(`/token`, updates);
+    const response = updatedUser.data;
+    console.log(response);
+    dispatch(setUpdatedUser(response));
   }
 };
 
