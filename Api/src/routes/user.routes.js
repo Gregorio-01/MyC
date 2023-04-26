@@ -14,6 +14,6 @@ user.get('/email/:email', getUserByEmail);
 user.get('/token', validateJWT, getOneUser);
 user.post('/', postUser);
 user.delete('/:id', deleteUser);
-user.put('/:id',putUser);
+user.put('/token', validateJWT, putUser);
 
 export default user;

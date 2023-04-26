@@ -9,9 +9,9 @@ cloudinary.config({
 });
 
 export async function putUser(req, res) {
-  const userId = req.params.id;
+  const userId = req.usuario._id;
   const updates = req.body;
-  const file = req.body.files ? req.body.files.image : null;
+  const file = req.files ? req.files.image : null;
   try {
     if (file) {
       const result = await cloudinary.uploader.upload(file.tempFilePath, {
@@ -27,6 +27,7 @@ export async function putUser(req, res) {
     if (!updatedUser) {
       return res.status(404).json({ message: 'Usuario no encontrado' });
     }
+
     return res.send('Usuario modificado');
   } catch (error) {
     console.error(error);
