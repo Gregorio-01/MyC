@@ -41,12 +41,12 @@ export const putUser = (updates, id) => {
   }
 };
 
-export const getUserById = (id) => {
+export const getThisUser = () => {
   return async (dispatch) => {
-    console.log(id);
-    const userById = await userApi.get(`/${id}`);
-    console.log(userById);
-    dispatch(setActualUser(userById.data));
+    const userByToken = userApi();
+    const thisUser = await userByToken.get(`/token`);
+    console.log(thisUser);
+    dispatch(setActualUser(thisUser.data));
   }
 };
 
