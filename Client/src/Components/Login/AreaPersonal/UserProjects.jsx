@@ -44,10 +44,18 @@ const UserProjects = () => {
                         </div>
                         <div className="textContainer">
                             <div className="titleContainer">
-                                <h1 className="title">{project.name}</h1>
+                                <h1 className="projectTitle">{project.name}</h1>
                             </div>
                             <div className="descriptionContainer">
                                 <h6 className="description">{project.description}</h6>
+                            </div>
+                        </div>
+                        <div className="optionsContainer">
+                            <div className="deleteContainer">
+                                <button className="deleteProject">X</button>
+                            </div>
+                            <div className="editContainer">
+                                <button className="editProject">🖊</button>
                             </div>
                         </div>
                     </div>
