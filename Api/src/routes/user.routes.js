@@ -11,7 +11,7 @@ const user = Router();
 
 user.get('/', validateJWT,getAllUsers);
 user.get('/email/:email', getUserByEmail);
-user.get('/:id', getOneUser);
+user.get('/token', validateJWT, getOneUser);
 user.post('/', postUser);
 user.delete('/:id', deleteUser);
 user.put('/:id',putUser);

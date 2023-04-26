@@ -10,13 +10,13 @@ import { generateJWT } from '../../helpers/generateJWT.js';
 
 export const loginUser = async (req, res = response) => {
   //console.log(req.body,'hola que tal')
-  const { mail , password } = req.body
+  const { email , password } = req.body
 
-  console.log(mail, password)
+  console.log(email, password)
 
   try {
     //verificar si el modelo existe
-    const usuario = await User.findOne({ email: mail })
+    const usuario = await User.findOne({ email: email })
     console.log(usuario)
     if (!usuario) {
       return res

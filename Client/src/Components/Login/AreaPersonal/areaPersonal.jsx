@@ -7,7 +7,7 @@ import ModifyInfo from "./modifyInfo";
 import ModifyImage from "./modifyImage";
 import UploadProject from "./uploadProject";
 import UserProjects from "./UserProjects";
-import { getUserProjects } from "../../../store/slices/users/thunks";
+import { getThisUser, getUserProjects } from "../../../store/slices/users/thunks";
 
 export default function AreaPersonal () {
 
@@ -30,10 +30,13 @@ export default function AreaPersonal () {
     const [loading, setLoading] = useState(false);
 
     const user = useSelector((store) => store.users.actualUser);
+    console.log(user);
     // const imageUrl = useSelector((store) => store.users.actualUser.img);
 
     useEffect(() => {
+        dispatch(getThisUser());
         dispatch(getUserProjects(45));
+        console.log('Desapachó');
     }, []);
 
     // useEffect(() => {
@@ -106,7 +109,9 @@ export default function AreaPersonal () {
                         </ModalComponent>
                     </div>
                     <div className="header__msjBtn">
-                        <button id="btnMensajes"> <img src="https://res.cloudinary.com/do0gmouxr/image/upload/v1680739240/Pagina%20Interna/mensaje_dnkfbc.png" alt="" /> </button>
+                        <button id="btnMensajes">
+                            <img src="https://res.cloudinary.com/do0gmouxr/image/upload/v1680739240/Pagina%20Interna/mensaje_dnkfbc.png" alt="msg" />
+                        </button>
                         <div id="containerMsj"></div>
                     </div>
                 </div>
