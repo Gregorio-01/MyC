@@ -15,7 +15,7 @@ const Home = () => {
       const data = JSON.parse(localStorage.getItem('userData')) 
       let name = data.name 
       let lastname = data.lastname
-      console.log(name, 'hola que tal')
+      
       if(name){
         toast(`Bienvenido ${name} ${lastname}`, {
           position: "top-right",
