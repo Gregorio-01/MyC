@@ -2,14 +2,14 @@ import axios from "axios";
 //aqui se crea un eddpoin base de las rutas de usuario
 
 export const loginApi = () => {
-    
     const loginInterfase = axios.create({
-        baseURL: 'http://localhost:3001/login'
+      baseURL: 'http://localhost:3001/login'
     });
     return loginInterfase;
-}
+  }
 export const projectApi = axios.create({
     baseURL:'http://localhost:3001/project'
+
 });
 
 export const userApi = () => {

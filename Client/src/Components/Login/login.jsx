@@ -1,4 +1,7 @@
 import { Formik, Field, Form, ErrorMessage } from 'formik'
+import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+
 import * as yup from 'yup'
 import './login.css'
 import 'animate.css';
@@ -9,6 +12,7 @@ import { useDispatch } from 'react-redux';
 const Login = () => {
 
   const dispatch = useDispatch()
+  const navigate = useNavigate();
 
   return (
     <div className="login-container">
@@ -23,7 +27,11 @@ const Login = () => {
         onSubmit={(values) => {
          
           dispatch( loginUser(values))
-        }}
+
+          
+           return navigate('/')
+           }
+        }
         validationSchema={yup.object({
           email: yup
             .string()
@@ -67,7 +75,7 @@ const Login = () => {
               >
                 Ingresar
               </button>
-
+              
               <a className="forgot-password" href="#">
                 ¿Olvidaste tu contraseña?
               </a>
