@@ -24,7 +24,7 @@ export const loginUser = (payload) => {
   
   return async (dispatch) => {
     const login = loginApi()
-    
+    console.log(login)
      dispatch ( startLoadingUsers() );
          
     const {data} = await login.post('/',payload)
