@@ -33,6 +33,10 @@ const associateSchema = new mongoose.Schema({
   destacada: {
     type: Boolean,
     default: false
+  },
+  link: {
+    type: String,
+    required: true
   }
 });
 

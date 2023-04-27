@@ -1,0 +1,77 @@
+
+.associate-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    /* border: 1px solid black; */
+    padding: 5px;
+}
+
+
+.slider-card-container {
+    /* display: flex;
+    height: 21rem;
+    width: 19rem;
+    flex-direction: column; */
+    z-index: 9;
+    border: 1px lightgray solid;
+}
+
+.slider-banner-container {
+    height: 21rem;
+    width: 19rem;
+    
+}
+
+.banner {
+    height: 100%;
+    width: 100%
+}
+
+
+.slider-section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    margin-top:0;
+    /* height: 100%; */
+    width: 100%;
+}
+
+
+.slider-associate-name{
+    color: #333;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    font-family:'Nunito Sans';
+    z-index:99
+}
+
+.slider-tienda-button{
+    display: flex;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    color: #999;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    transition: 1s;
+}
+
+.slider-tienda-button:hover{
+    display: flex;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    color: #24a6aa;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    transition: 1s;
+}

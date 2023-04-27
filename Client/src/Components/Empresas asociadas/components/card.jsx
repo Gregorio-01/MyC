@@ -1,8 +1,8 @@
 import React from "react";
 import "./card.css"
-const Card = ({name, banner, photo, product1, product2, product3}) => {
+const Card = ({name, banner, photo, product1, product2, product3, link}) => {
     return (
-        <div className="container">
+        // <div className="container">
             <div className="card-container">
                 <div className="banner-container">
                     <img className="banner" src={banner}></img>
@@ -17,10 +17,10 @@ const Card = ({name, banner, photo, product1, product2, product3}) => {
                         <img className="product-photo" src={product2} />
                         <img className="product-photo" src={product3} />
                     </div>
-                    <button className="tienda-button">Ver tienda</button>
+                    <a className="tienda-button" href={link? link : null} target='_blank'>Ver tienda</a>
                 </div>
             </div>
-        </div>
+        // </div>
     )
 }
 

@@ -10,6 +10,7 @@ import 'swiper/css';
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar"
+import SliderCard from "./slider-card";
 
 const Main = () => {
     const dispatch = useDispatch()
@@ -20,34 +21,51 @@ const Main = () => {
     console.log(associates)
     return (
         <div className="associates-container">
-            <h1>Empresas Destacadas</h1>
-            <div className="associates-swiper-container">
-                <Swiper
-                    navigation={true} modules={[Navigation]}
-                    spaceBetween={50}
-                    slidesPerView={3}
-                    onSlideChange={() => console.log('slide change')}
-                    onSwiper={(swiper) => console.log(swiper)}
-                >
-                    <SwiperSlide>Slide 1</SwiperSlide>
-                    <SwiperSlide>Slide 2</SwiperSlide>
-                    <SwiperSlide>Slide 3</SwiperSlide>
-                    <SwiperSlide>Slide 4</SwiperSlide>
-                </Swiper>
+            <div className="asociadas-banner">
+                <h1 style={{ color: "white", fontSize: '4.5rem' }}>Empresas Asociadas</h1>
             </div>
-            {associates?.map(i => {
-                return (
-                    <Card
-                        name={i.name}
-                        banner={i.banner}
-                        photo={i.photo}
-                        product1={i.product1}
-                        product2={i.product2}
-                        product3={i.product3}
+            <div className="destacadas-container">
+                <h1 style={{ color: "white" }}>Empresas Destacadas</h1>
+                <div>
+                    <Swiper
+                        navigation={true} modules={[Navigation]}
+                        spaceBetween={0}
+                        slidesPerView={associates?.length < 3 ? associates.length : 3}
+                        onSlideChange={() => console.log('slide change')}
+                        onSwiper={(swiper) => console.log(swiper)}
                     >
-                    </Card>
-                )
-            })}
+                        {associates?.map(i => {
+                            return (
+                                <>
+                                    {i.destacada &&
+                                        <SwiperSlide>
+                                            <SliderCard name={i.name} banner={i.banner} />
+                                        </SwiperSlide>
+                                    }
+                                </>
+                            )
+                        }
+                        )}
+                    </Swiper>
+                </div>
+            </div>
+            <hr></hr>
+            <div className="associates-cards-container">
+                {associates?.map(i => {
+                    return (
+                        <Card
+                            name={i.name}
+                            banner={i.banner}
+                            photo={i.photo}
+                            product1={i.product1}
+                            product2={i.product2}
+                            product3={i.product3}
+                            link={i.link}
+                        >
+                        </Card>
+                    )
+                })}
+            </div>
         </div>
     )
 }

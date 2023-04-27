@@ -17,6 +17,7 @@ import Desarrollo from "./Components/Login/Desarrollo/Desarrollo";
 import UserProjects from "./Components/Login/AreaPersonal/UserProjects";
 import Card from "./Components/Empresas asociadas/components/card";
 import Main from "./Components/Empresas asociadas/components/main";
+import SliderCard from "./Components/Empresas asociadas/components/slider-card";
 
 
 function App() {
@@ -37,10 +38,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/redux" element={<ReduxComponent />} />
         <Route path="/terms-of-service" element={<Terminos />} />
-        {/* rutas de prueba */}
-        <Route path="/card" element={<Card />} />
-        <Route path="/associates" element={<Main />} />
-        {/* rutas de prueba */}
+        <Route path="/login/associates" element={<Main />} />
       </Routes>
       <Whatsappbutton />
       <Footer />
