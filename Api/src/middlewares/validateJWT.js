@@ -5,7 +5,7 @@ import { SECRET_KEY } from '../../config.js';
 
 export const validateJWT = async (req = request, res = response, next) => {
     
-  const token = req.headers.token
+  const token = req.headers.token;
 
   if (!token) {
       return res.status(401).json({ msg: 'no hay token' })
@@ -21,7 +21,6 @@ export const validateJWT = async (req = request, res = response, next) => {
         msg: 'token no valido, usuario no activo / no hay usuario',
       })
     }
-
    
     req.usuario = usuario 
 
@@ -31,5 +30,4 @@ export const validateJWT = async (req = request, res = response, next) => {
       msg: 'token no valido',
     })
   }
-} 
-
+}

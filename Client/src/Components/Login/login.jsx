@@ -1,4 +1,7 @@
 import { Formik, Field, Form, ErrorMessage } from 'formik'
+import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+
 import * as yup from 'yup'
 import './login.css'
 import 'animate.css';
@@ -9,41 +12,12 @@ import { useDispatch } from 'react-redux';
 const Login = () => {
 
   const dispatch = useDispatch()
+  const navigate = useNavigate();
 
   return (
     <div className="login-container">
       <div className='card-container'>
         {/* Aquí empieza la primera card */}
-        <div className='login-card plataforma'>
-          <h2 >La Plataforma</h2>
-          <br/>
-          <br/>
-        <div className="card-content">
-          <p >Nuestro sistema permite al usuario tener un ecosistema 
-          de trabajo en el cual puede disponer de diversas herramientas 
-          como cursos, códigos de edificación, libros constructivos, charlas...</p>
-          <br/>
-          <br/>
-          <button className='btn-login'>Más info</button>
-         </div>
-        </div>
-      
-        {/* Aquí empieza la segunda card */}
-        <div className="login-card beneficios">
-          <h2 >Beneficios</h2>
-          <br/>
-          <br/>
-        <div className="card-content">
-          <p >Los Beneficios de ser asociado de My Construction,
-           se generan a partir de la conexión de la plataforma con constructoras,
-            clientes e inmobiliarias...</p>
-          <br/>
-          <br/>
-          <button className='btn-login'>Más info</button>
-         </div> 
-        </div>
-      </div>
-
       <Formik
         className="login__formulario"
         initialValues={{
@@ -53,7 +27,11 @@ const Login = () => {
         onSubmit={(values) => {
          
           dispatch( loginUser(values))
-        }}
+
+          
+           return navigate('/')
+           }
+        }
         validationSchema={yup.object({
           email: yup
             .string()
@@ -97,7 +75,7 @@ const Login = () => {
               >
                 Ingresar
               </button>
-
+              
               <a className="forgot-password" href="#">
                 ¿Olvidaste tu contraseña?
               </a>
@@ -108,6 +86,36 @@ const Login = () => {
           </div>
         )}
       </Formik>
+        <div className='login-card plataforma'>
+          <h2 >La Plataforma</h2>
+          <br/>
+          <br/>
+        <div className="card-content">
+          <p >Nuestro sistema permite al usuario tener un ecosistema 
+          de trabajo en el cual puede disponer de diversas herramientas 
+          como cursos, códigos de edificación, libros constructivos, charlas...</p>
+          <br/>
+          <br/>
+          <button className='btn-login'>Más info</button>
+         </div>
+        </div>
+      
+        {/* Aquí empieza la segunda card */}
+        <div className="login-card beneficios">
+          <h2 >Beneficios</h2>
+          <br/>
+          <br/>
+        <div className="card-content">
+          <p >Los Beneficios de ser asociado de My Construction,
+           se generan a partir de la conexión de la plataforma con constructoras,
+            clientes e inmobiliarias...</p>
+          <br/>
+          <br/>
+          <button className='btn-login'>Más info</button>
+         </div> 
+        </div>
+      </div>
+
     </div>
   )
 }

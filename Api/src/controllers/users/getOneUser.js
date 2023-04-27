@@ -2,7 +2,9 @@ import User from '../../models/Users.js';
 import bcrypt from 'bcryptjs';
 
 export async function getOneUser(req, res) {
-  const userId = req.params.id;
+  const userId = req.usuario._id;
+  const userData = req.usuario;
+
   try {
     // Buscamos el usuario por su ID
     const user = await User.findById(userId);
@@ -11,7 +13,6 @@ export async function getOneUser(req, res) {
     }
     
     return res.json(user);
-
 
   } catch (error) {
     console.error(error);

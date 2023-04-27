@@ -1,25 +1,28 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { putUser } from "../../../store/slices/users/thunks";
 import { Formik, Form, validateYupSchema } from 'formik';
 import * as yup from 'yup';
 import { MyTextInput } from '../../Register/FormComponents/MyTextInput';
-// import styles from '../../Register/styles.module.css';
 import './modifyInfo.css';
 
 const ModifyInfo = () => {
 
     const dispatch = useDispatch();
+    
+    const changes = useSelector((store) => store.users.updatedUser);
+    const [savedChanges, setSavedChanges] = useState(true);
 
-    const userData = JSON.parse(window.localStorage.getItem('userData'));
-    // const userId = userData.id;
+    useEffect(() => {
+        // setSavedChanges(true);
+        // return setSavedChanges(false);
+    }, [changes]);
 
     return (
         <div>
             <Formik
                 initialValues={{
-                // profilePic: {},
-                firstName: '',
+                name: '',
                 lastName: '',
                 emailAddress: '',
                 terms: false,
@@ -29,10 +32,10 @@ const ModifyInfo = () => {
                 }}
                 onSubmit={(values) => {
                 console.log(values);
-                dispatch(putUser(values, userId));
+                dispatch(putUser(values));
                 }}
                 validationSchema={yup.object({
-                firstName: yup
+                name: yup
                     .string()
                     .max(15, 'deber tener maximo 15 caracteres'),
                     // .required('requerido'),
@@ -69,47 +72,59 @@ const ModifyInfo = () => {
                 <Form className="form">
                     <h3>Modificar información</h3>
                     <br />
-                    {/* <MyTextInput 
-                    className={styles.input}
-                    label='Foto de perfil'
-                    name='profilePic'
-                    placeholder='Selecciona un archivo'
-                    type='file'
-                    /> */}
-                    <MyTextInput
-                    className="input"
-                    label="Nombre"
-                    name="firstName"
-                    placeholder="Ingresa tu nombre"
-                    />
-                    <MyTextInput
-                    className="input"
-                    label="Apellido"
-                    name="lastName"
-                    placeholder="Ingresa tu apellido"
-                    />
-                    <MyTextInput
-                    className="input"
-                    label="Email"
-                    name="emailAddress"
-                    placeholder="Ingresa tu email"
-                    type="email"
-                    />
-                    <MyTextInput
-                    className="input"
-                    label="Contraseña"
-                    name="password"
-                    placeholder="Ingresa una contraseña de 8 caracteres"
-                    type="password"
-                    />
-                    <MyTextInput
-                    className="input"
-                    label="Repite tu contraseña"
-                    name="password2"
-                    placeholder="Repite tu contraseña"
-                    type="password"
-                    />
+                    <div className="formElementsContainer">
+                        <div className="elementContainer">
+                            <MyTextInput
+                            className="input"
+                            label="Nombre"
+                            name="name"
+                            placeholder="Ingresa tu nombre"
+                            />
+                        </div>
+                        <div className="elementContainer">
+                            <MyTextInput
+                            className="input"
+                            label="Apellido"
+                            name="lastName"
+                            placeholder="Ingresa tu apellido"
+                            />
+                        </div>
+                        <div className="elementContainer">
+                            <MyTextInput
+                            className="input"
+                            label="Email"
+                            name="emailAddress"
+                            placeholder="Ingresa tu email"
+                            type="email"
+                            />
+                        </div>
+                        <div className="elementContainer">
+                            <MyTextInput
+                            className="input"
+                            label="Contraseña"
+                            name="password"
+                            placeholder="Ingresa una contraseña de 8 caracteres"
+                            type="password"
+                            />
+                        </div>
+                        <div className="elementContainer">
+                            <MyTextInput
+                            className="input"
+                            label="Repite tu contraseña"
+                            name="password2"
+                            placeholder="Repite tu contraseña"
+                            type="password"
+                            />
+                        </div>
+                    </div>
+                    <br/>
                     <button type="submit" className="submit">Guardar información</button>
+                    {
+                        savedChanges && 
+                        <div className="savedChangesContainer">
+                            <span className="savedChanges">Cambios guardados!</span>
+                        </div>
+                    }
                 </Form>
             )}
             </Formik>

@@ -265,13 +265,18 @@
 .card {
     width: 240px;
     height: 254px;
-    color: white;
+    /* color: white; */
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 5px;
     overflow: visible;
     background-color: var(--colorGrisOscuro);
     padding: 10px;
+}
+
+.card div {
+  /* color: var(--colorNaranjaOscuro); */
+  font-weight: 500;
 }
 
 .card .item {
@@ -282,6 +287,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: whitesmoke;
+    color: var(--colorNaranjaOscuro);
 }
 
 .item:hover {
@@ -297,16 +304,16 @@
 }
 
 .item--1 {
-  color: black;
+  /* color: black; */
   background: whitesmoke;
 }
 
-.item--2 span {
-  color: black;
-}
+/* .item--2 span {
+    color: black; 
+} */
   
 .item--2 {
-  color: black;
+  /* color: black; */
   background: whitesmoke;
 }
 

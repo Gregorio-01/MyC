@@ -1,31 +1,28 @@
 import axios from "axios";
 //aqui se crea un eddpoin base de las rutas de usuario
 
-export const loginApi = axios.create({
-    baseURL: 'http://localhost:3001/login'
-});
-
+export const loginApi = () => {
+    const loginInterfase = axios.create({
+      baseURL: 'http://localhost:3001/login'
+    });
+    return loginInterfase;
+  }
 export const projectApi = axios.create({
     baseURL:'http://localhost:3001/project'
+
 });
 
-const userApi = () => {
+export const userApi = () => {
+    const {token} = JSON.parse(localStorage.getItem('userData')) 
     
+    const headers = {
+        'token': token,
+        };
     // axios instance
     let userInstace = axios.create({
         baseURL: 'http://localhost:3001/user',
+        headers
     })
-
-    // Set auth token for any request
-    userInstace.interceptors.request.use(function (config) {
-        
-        const {token} = JSON.parse(localStorage.getItem('userData')) 
-        
-        config.headers.Authorization = token ? `Bearer ${token}` : "";
-        return config;
-    });
-
     return userInstace;
-};
+}
 
-export default userApi();
