@@ -88,3 +88,43 @@
     font-weight: normal;
     margin-top: 30px;
   }
+
+  
+  .Destacados_container {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .imgSlide1 {
+    min-width: 475.5px;
+    min-height: 304px;
+    display: block;
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+  
+  .hiddenText {
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+    z-index: 10;
+  }
+  
+  .imgSlide1:hover .hiddenText {
+    visibility: visible;
+    text-align: center;
+    opacity: 1;
+  }
+  
+  .imgSlide1:hover .hiddenText div {
+    opacity: 1;
+  }
+
