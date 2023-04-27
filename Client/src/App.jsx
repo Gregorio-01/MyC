@@ -15,6 +15,9 @@ import Whatsappbutton from "./Components/WhatsApp/whatsappbutton";
 import Terminos from "./Components/Terminos/terminos";
 import Desarrollo from "./Components/Login/Desarrollo/Desarrollo";
 import UserProjects from "./Components/Login/AreaPersonal/UserProjects";
+import Card from "./Components/Empresas asociadas/components/card";
+import Main from "./Components/Empresas asociadas/components/main";
+import SliderCard from "./Components/Empresas asociadas/components/slider-card";
 
 
 function App() {
@@ -35,6 +38,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/redux" element={<ReduxComponent />} />
         <Route path="/terms-of-service" element={<Terminos />} />
+        <Route path="/login/associates" element={<Main />} />
       </Routes>
       <Whatsappbutton />
       <Footer />
