@@ -16,7 +16,10 @@ const Desarrollo = () => {
   const [recursos, setRecursos]=useState([])
   const materialState = useSelector(state => state.materials.materials)
   const dispatch = useDispatch()
-  
+  const [cursoDestacado, setCursoDestacado]=useState([])
+  const [recursoDestacado, setRecursoDestacado]=useState([])
+
+
   const divitirMaterial = () => {
     const typeCurso = materialState.filter((cursos)=>cursos.type !== "Cursos")
     const typeArticulo = materialState.filter((cursos)=>cursos.type !== "Articulo")
@@ -32,6 +35,9 @@ const Desarrollo = () => {
     if (materialState.length > 1) {
       divitirMaterial()
     }
+    setCursoDestacado(cursos[9])
+    setRecursoDestacado(recursos[8])
+
   }, [materialState])
   
 
@@ -125,6 +131,30 @@ const Desarrollo = () => {
       </div>
 
       </div>
+
+      <div>
+  <h3>CURSOS DESTACADOS</h3>
+  <div className={styles.Destacados_container}>
+    <div>
+      <div>
+        <img src={cursoDestacado?.img} className={styles.imgSlide1} />
+        <div className={styles.hiddenText}>
+          <div>{cursoDestacado?.name}</div>
+          <div>{cursoDestacado?.description}</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div>
+        <img src={recursoDestacado?.img} className={styles.imgSlide1} />
+        <div className={styles.hiddenText}>
+          <div>{recursoDestacado?.name}</div>
+          <div>{recursoDestacado?.description}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
     </div>
   )
 }
