@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getAllMaterias } from "../../../store/slices/materials/thunks";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+import { Navigation } from "swiper";
 import 'swiper/css';
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -16,7 +16,10 @@ const Desarrollo = () => {
   const [recursos, setRecursos]=useState([])
   const materialState = useSelector(state => state.materials.materials)
   const dispatch = useDispatch()
-  
+  const [cursoDestacado, setCursoDestacado]=useState([])
+  const [recursoDestacado, setRecursoDestacado]=useState([])
+
+
   const divitirMaterial = () => {
     const typeCurso = materialState.filter((cursos)=>cursos.type !== "Cursos")
     const typeArticulo = materialState.filter((cursos)=>cursos.type !== "Articulo")
@@ -32,6 +35,9 @@ const Desarrollo = () => {
     if (materialState.length > 1) {
       divitirMaterial()
     }
+    setCursoDestacado(cursos[9])
+    setRecursoDestacado(recursos[8])
+
   }, [materialState])
   
 
@@ -49,7 +55,7 @@ const Desarrollo = () => {
       <div className={styles.divCursos}>
         {/* Texto */}
         <div className={styles.divTexto}>
-        <h3>Cursos</h3>
+        <h3 className={styles.textoExtra}>Cursos</h3>
         </div>
         {/* Slide */}
         <div>
@@ -60,8 +66,25 @@ const Desarrollo = () => {
           loop={true}
           spaceBetween={30}
           grabCursor={true}
-          
           className="mySwiper"
+          breakpoints={{
+            1024: {
+              slidesPerView: 4,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 3,
+              spaceBetween: 10,
+            },
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 10,
+            },
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 10,
+            },
+          }}
           >
            {
            recursos?.map((c) => (
@@ -89,7 +112,7 @@ const Desarrollo = () => {
       <div className={styles.divCursos}>
         {/* Texto */}
         <div className={styles.divTexto}>
-          <h3>Recursos</h3>
+          <h3 className={styles.textoExtra}>Recursos</h3>
         </div>
         <div>
           <Swiper
@@ -99,8 +122,25 @@ const Desarrollo = () => {
           loop={true}
           spaceBetween={30}
           grabCursor={true}
-          
           className="mySwiper"
+          breakpoints={{
+            1024: {
+              slidesPerView: 4,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 3,
+              spaceBetween: 10,
+            },
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 10,
+            },
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 10,
+            },
+          }}
           >
            {
            cursos?.map((c) => (
@@ -124,8 +164,43 @@ const Desarrollo = () => {
         </div>
       </div>
 
-      </div>
+
+      <div className={styles.divCursosExtras}>
+         {/* Texto */}
+         <div className={styles.divTexto}>
+           <h3 className={styles.textoExtra}>CURSOS DESTACADOS</h3>
+         </div>
+         {/* Imagenes */}
+         <div className={styles.divImagenesExtras}>
+         <div className={styles.contenedorExtra}>
+  <a href="https://www.youtube.com/watch?v=CdUJGmAL-WE" target="_blank">
+    <img src="https://res.cloudinary.com/do0gmouxr/image/upload/v1680739242/Pagina%20Interna/mqdefault_5_d9zu7o.jpg" className={styles.imagenExtra}/>
+    <div className={styles.contenidoExtra}>
+      <h4 className={styles.tituloExtra}>Flujo de Trabajo MULTIPLANTA</h4>
+      <p className={styles.descripcionExtra}>Les compartimos un video de ArqManes donde explica en AutoCAD el Flujo de Trabajo Multiplanta para Arq. o Ing. Independientes</p>
     </div>
+  </a>
+</div>
+  <div className={styles.contenedorExtra}>
+    <img src="https://res.cloudinary.com/do0gmouxr/image/upload/v1680739323/Pagina%20Interna/TwnMCURSO_xcwiln.png" className={styles.imagenExtra}/>
+    <a href="https://drive.google.com/drive/folders/1WysZqQtT79KJNLF73vzq3Mv741qeJQCO" className={styles.enlaceExtra} target="_blank" >
+    <div className={styles.contenidoExtra}>
+      <h4 className={styles.tituloExtra}>Curso TwinMotion</h4>
+      <p className={styles.descripcionExtra}>En este curso aprenderas habilidades basicas para el manejo de el software de renderizado TwinMotion</p>
+      <span className={styles.textoBotonExtra}>Descargar</span>
+    </div>
+  </a>
+  </div>
+         </div>
+      </div>
+      
+      <div className={styles.divFinal}>
+        <h1>¿Queres ver los beneficios que tenemos para vos?</h1>
+      </div>
+
+      </div>
+</div>
+
   )
 }
 

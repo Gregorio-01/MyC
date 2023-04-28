@@ -21,10 +21,34 @@
     text-align: center;
 }
 
+.divFinal{
+  background-image: url("https://myconstruction.com.ar/colaboradores/img/backgroundDesarrollo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  width: auto;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-items: baseline;
+  margin: 0 18rem 0 18rem;
+}
+
+.divFinal h1 {
+  color: #ffffff;
+  font-size: 50px;
+  width: 640px;
+  margin: 0 auto;
+  /* margin-top: 15rem; */
+  text-align: center;
+}
+
 .divGeneral{
     /* background-color:rgb(150, 126, 126); */
     background-color: black;
-    height: 800px;
+    height: 1440px;
 }
 
 .divCursos{
@@ -44,7 +68,27 @@
     color: #ffffff;
 }
 
+.textoExtra{
+  font-size: 36px;
+}
 
+.divCursosExtras{
+    display: flex;
+    flex-direction: column;
+    margin: 0 15rem 3rem 15rem;
+}
+
+.divImagenesExtras{
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.imagenExtra{
+  height: 320px;
+  width: 550px;
+}
 
 .imgSlide{
     width: 260px;
@@ -87,4 +131,43 @@
     color: white;
     font-weight: normal;
     margin-top: 30px;
+  }
+
+  
+  .contenedorExtra {
+    position: relative;
+  }
+  
+  .contenidoExtra {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .contenedorExtra:hover .contenidoExtra {
+    opacity: 1;
+  }
+
+  .tituloExtra {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .descripcionExtra {
+    font-size: 1rem;
+    font-weight: normal;
   }
