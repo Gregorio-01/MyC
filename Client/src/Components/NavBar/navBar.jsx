@@ -17,7 +17,7 @@ const NavBar = () => {
   };
 
   useEffect(() => {
-    location.pathname === '/login/AreaPersonal' ? setShow(false) : setShow(true);
+    location.pathname === '/login/AreaPersonal' ? setShow(false) : setShow(true) || location.pathname === '/login/desarrollo' ? setShow(false) : setShow(true)
     // console.log(location);
     // console.log(show);
   }, [location]);
