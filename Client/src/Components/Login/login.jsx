@@ -16,10 +16,10 @@ const Login = () => {
 
   return (
     <div className="login-container">
-      <div className='card-container'>
+      <div className='login-card-container'>
         {/* Aquí empieza la primera card */}
-      <Formik
-        className="login__formulario"
+        <Formik
+        
         initialValues={{
           email: '',
           password: '',
@@ -43,32 +43,32 @@ const Login = () => {
             .max(10, 'Máximo 10 caracteres')
             .required('El password es requerido'),
         })}
-      >
+       >
         {(formik) => (
-          <div className="form-container">
+          <div className="login-form-container">
             {/* Aquí empieza la primera card */}
-            <Form className="form">
-              <label htmlFor="email">Usuario</label>
+            <Form className="login-form">
+              <label className='login-label' htmlFor="email">Usuario</label>
               <Field
-                className="input-field" 
+                className="login-input-field" 
                 name="email" 
                 placeholder="Ingresa tu correo electrónico" 
               />
-              <ErrorMessage name="email" component="span" className="form-error"/>
+              <ErrorMessage name="email" component="span" className="login-form-error"/>
               <br/>
 
-              <label htmlFor="password">Contraseña</label>
+              <label className='login-label' htmlFor="password">Contraseña</label>
               <Field
-                className="input-field"
+                className="login-input-field"
                 type="password"
                 id="password"
                 name="password"
                 placeholder="Ingresa tu contraseña"
               />
-              <ErrorMessage name="password" component="span" className="form-error"/>
+              <ErrorMessage name="password" component="span" className="login-form-error"/>
               <br/>
               <button
-                className="submit-button"
+                className="login-submit-button"
                 type="submit"
                 name="Ingresar"
                 value="Enviar"
@@ -76,42 +76,42 @@ const Login = () => {
                 Ingresar
               </button>
               
-              <a className="forgot-password" href="#">
+              <a className="login-forgot-password" href="#">
                 ¿Olvidaste tu contraseña?
               </a>
-              <a className="forgot-password" href="#">
+              <a className="login-forgot-password" href="#">
                 ¿Aún no tienes una cuenta?
               </a>
             </Form>
           </div>
         )}
-      </Formik>
-        <div className='login-card plataforma'>
-          <h2 >La Plataforma</h2>
+        </Formik>
+        <div className='login-card login-plataforma'>
+          <h2 className='login-h2'>La Plataforma</h2>
           <br/>
           <br/>
-        <div className="card-content">
-          <p >Nuestro sistema permite al usuario tener un ecosistema 
+        <div className="login-card-content">
+          <p className='login-p'>Nuestro sistema permite al usuario tener un ecosistema 
           de trabajo en el cual puede disponer de diversas herramientas 
           como cursos, códigos de edificación, libros constructivos, charlas...</p>
           <br/>
           <br/>
-          <button className='btn-login'>Más info</button>
+          <button className='login-btn-login'>Más info</button>
          </div>
         </div>
       
         {/* Aquí empieza la segunda card */}
-        <div className="login-card beneficios">
-          <h2 >Beneficios</h2>
+        <div className="login-card login-beneficios">
+          <h2 className='login-h2'>Beneficios</h2>
           <br/>
           <br/>
-        <div className="card-content">
-          <p >Los Beneficios de ser asociado de My Construction,
+        <div className="login-card-content">
+          <p className='login-p'>Los Beneficios de ser asociado de My Construction,
            se generan a partir de la conexión de la plataforma con constructoras,
             clientes e inmobiliarias...</p>
           <br/>
           <br/>
-          <button className='btn-login'>Más info</button>
+          <button className='login-btn-login'>Más info</button>
          </div> 
         </div>
       </div>
