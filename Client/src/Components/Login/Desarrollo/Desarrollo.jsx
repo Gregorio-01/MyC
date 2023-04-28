@@ -55,7 +55,7 @@ const Desarrollo = () => {
       <div className={styles.divCursos}>
         {/* Texto */}
         <div className={styles.divTexto}>
-        <h3>Cursos</h3>
+        <h3 className={styles.textoExtra}>Cursos</h3>
         </div>
         {/* Slide */}
         <div>
@@ -95,7 +95,7 @@ const Desarrollo = () => {
       <div className={styles.divCursos}>
         {/* Texto */}
         <div className={styles.divTexto}>
-          <h3>Recursos</h3>
+          <h3 className={styles.textoExtra}>Recursos</h3>
         </div>
         <div>
           <Swiper
@@ -130,32 +130,26 @@ const Desarrollo = () => {
         </div>
       </div>
 
+
+      <div className={styles.divCursosExtras}>
+         {/* Texto */}
+         <div className={styles.divTexto}>
+           <h3 className={styles.textoExtra}>CURSOS DESTACADOS</h3>
+         </div>
+         {/* Imagenes */}
+         <div className={styles.divImagenesExtras}>
+            <img src="https://res.cloudinary.com/do0gmouxr/image/upload/v1680739242/Pagina%20Interna/mqdefault_5_d9zu7o.jpg" className={styles.imagenExtra}/>
+            <img src="https://res.cloudinary.com/do0gmouxr/image/upload/v1680739323/Pagina%20Interna/TwnMCURSO_xcwiln.png" className={styles.imagenExtra}/>
+         </div>
+      </div>
+      
+      <div className={styles.divFinal}>
+        <h1>¿Queres ver los beneficios que tenemos para vos?</h1>
       </div>
 
-      <div>
-  <h3>CURSOS DESTACADOS</h3>
-  <div className={styles.Destacados_container}>
-    <div>
-      <div>
-        <img src={cursoDestacado?.img} className={styles.imgSlide1} />
-        <div className={styles.hiddenText}>
-          <div>{cursoDestacado?.name}</div>
-          <div>{cursoDestacado?.description}</div>
-        </div>
       </div>
-    </div>
-    <div>
-      <div>
-        <img src={recursoDestacado?.img} className={styles.imgSlide1} />
-        <div className={styles.hiddenText}>
-          <div>{recursoDestacado?.name}</div>
-          <div>{recursoDestacado?.description}</div>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
-    </div>
+
   )
 }
 
