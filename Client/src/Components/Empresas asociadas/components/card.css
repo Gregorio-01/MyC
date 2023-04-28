@@ -38,7 +38,7 @@
     height: 5rem;
     border-radius: 15px;
     z-index: 9;
-    aspect-ratio: auto;
+    object-fit:contain;
 }
 
 .section {
