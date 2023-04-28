@@ -1,0 +1,232 @@
+
+
+.loginContainer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: 100vh;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('https://res.cloudinary.com/do0gmouxr/image/upload/v1680739268/Pagina%20Interna/backgroundLogin_yaqw2x.jpg');
+  }
+  
+  
+  .formContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    width: 350px;
+    height: 400px;
+    background-color: #fff;
+    padding: 25px;
+    
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+    margin-right: 150px;
+    margin-left: 30px;
+  }
+  
+  .formLabel {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+  
+  .inputField {
+    width: 100%;
+    padding: 10px 10px 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  
+  .form .submitButton {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    color: #fff;
+    background-color: orange;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .submitButton:hover {
+    background-color: #FF8C00; /* naranja oscuro */
+    color: #8B4513; /* naranja */
+    box-shadow: 0 0 0 2px #8B4513; /* borde marrón oscuro */
+    outline: none;
+  }
+  
+  .form .forgotBassword {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+    text-align: center;
+  }
+  .inputField {
+    width: 100%;
+  }
+  .formError {
+    color: red;
+  }
+  .loginCard {
+    color: #ffffff;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    background-color: #fdfbfb;
+    padding: 25px;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+    margin-left: 30px;
+    height: 400px;
+    transition: background 0.9s ease-in-out;
+    transition-delay: 0.9s;
+  }
+  .cardContainer {
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 50px;
+    overflow: hidden;
+  }
+  
+  .plataforma{
+    background-image: url('https://res.cloudinary.com/do0gmouxr/image/upload/v1680739327/Pagina%20Interna/Fondo2_orkf8v.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .beneficios{
+    background-image: url('https://res.cloudinary.com/do0gmouxr/image/upload/v1680739325/Pagina%20Interna/Fondo3_yiwuav.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  
+  .btnLogin {
+    background-color: #FFA500; /* naranja */
+    border: none;
+    color: #fff; /* blanco */
+    border-radius: 5px; /* bordes redondeados */
+    padding: 10px 20px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+  }
+  
+  /* Estilos cuando se coloca el cursor encima */
+  .btnLogin:hover {
+    background-color: #FF8C00; /* naranja oscuro */
+    color: #8B4513; /* naranja */
+    box-shadow: 0 0 0 2px #8B4513; /* borde marrón oscuro */
+    outline: none;
+  }
+  
+  /* Estilos cuando se hace clic en el botón */
+  .btnLogin:active {
+    background-color: #FF8C00; /* naranja oscuro */
+    box-shadow: 0 0 0 2px #8B4513; /* borde marrón oscuro */
+  }
+  
+  .h2{
+    font-size: 22;
+    font-family: 'Nunito Sans', sans-serif;
+    position: relative;
+    transform: translateY(1000%);
+    opacity: 1;
+    transition: transform 0.9s ease, opacity 0.5s ease;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  }
+  
+  .p{
+  font-size:large;
+  font-family: 'Nunito Sans', sans-serif;
+  }
+  .cardContent {
+    position: relative;
+    transform: translateY(260%);
+    opacity: 1;
+    transition: transform 0.9s ease, opacity 0.5s ease;
+  }
+  
+  .loginCard:hover .card-content {
+    
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  .loginCard:hover h2 {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  
+  .loginPlataforma:hover {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)), url('https://res.cloudinary.com/do0gmouxr/image/upload/v1680739327/Pagina%20Interna/Fondo2_orkf8v.jpg');
+    background-size: cover;
+    background-position: center;
+   }
+  .loginBeneficios:hover {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)), url('https://res.cloudinary.com/do0gmouxr/image/upload/v1680739325/Pagina%20Interna/Fondo3_yiwuav.jpg');
+    background-size: cover;
+    background-position: center;
+   }
+   @media (max-width: 768px) {
+    .loginContainer {
+      height: auto;
+      display: flex;
+      flex-direction: column-reverse
+    }
+    .formContainer {
+      height: auto;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .form {
+      margin-right: 0;
+      margin-left: 0;
+      width: 80%;
+    }
+    .cardContainer {
+      margin-left: 0;
+      margin-right: 0;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .loginCard {
+      margin-left: 0;
+      width: 80%;
+      height: auto;
+      margin-bottom: 30px;
+    }
+    .h2 {
+      font-size: 18px;
+      text-align: center;
+      transform: translateY(0%);
+      opacity: 1;
+    }
+    .cardContent {
+      transform: translateY(0%);
+      opacity: 1;
+    }
+  }
