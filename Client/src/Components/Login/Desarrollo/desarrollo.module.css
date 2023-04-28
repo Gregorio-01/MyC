@@ -81,12 +81,13 @@
 .divImagenesExtras{
   flex-direction: row;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 12px;
 }
 
 .imagenExtra{
-  height: 400px;
-  width: 700px;
+  height: 320px;
+  width: 550px;
 }
 
 .imgSlide{
@@ -133,41 +134,40 @@
   }
 
   
-  .Destacados_container {
-    display: flex;
-    justify-content:center;
-    align-items: center;
-    gap: 12px;
-  }
-  
-  .imgSlide1 {
-    min-width: 475.5px;
-    min-height: 304px;
-    display: block;
-    margin: 0;
-    padding: 0;
+  .contenedorExtra {
     position: relative;
   }
   
-  .hiddenText {
-    visibility: hidden;
+  .contenidoExtra {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     color: #fff;
-    padding: 10px;
-    transition: all 0.3s ease-in-out;
-    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
   }
   
-  .imgSlide1:hover .hiddenText {
-    visibility: visible;
-    text-align: center;
-    opacity: 1;
-  }
-  
-  .imgSlide1:hover .hiddenText div {
+  .contenedorExtra:hover .contenidoExtra {
     opacity: 1;
   }
 
+  .tituloExtra {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .descripcionExtra {
+    font-size: 1rem;
+    font-weight: normal;
+  }
