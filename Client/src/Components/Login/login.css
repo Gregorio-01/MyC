@@ -115,7 +115,10 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
 }
+
+
 .login-beneficios{
   background-image: url('https://res.cloudinary.com/do0gmouxr/image/upload/v1680739325/Pagina%20Interna/Fondo3_yiwuav.jpg');
   background-size: cover;
@@ -172,26 +175,17 @@ font-weight: bold;
   transition: transform 0.9s ease, opacity 0.5s ease;
 }
 
+
 .login-card:hover .login-card-content {
   
   transform: translateY(0%);
   opacity: 1;
 }
-.login-card:hover h2 {
+.login-card:hover .login-h2 {
   transform: translateY(0%);
   opacity: 1;
 }
 
-.login-card.plataforma:hover {
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)), url('https://res.cloudinary.com/do0gmouxr/image/upload/v1680739327/Pagina%20Interna/Fondo2_orkf8v.jpg');
-  background-size: cover;
-  background-position: center;
- }
-.login-card.beneficios:hover {
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)), url('https://res.cloudinary.com/do0gmouxr/image/upload/v1680739325/Pagina%20Interna/Fondo3_yiwuav.jpg');
-  background-size: cover;
-  background-position: center;
- }
  @media (max-width: 1000px) {
   .login-container {
     height: auto;
@@ -225,6 +219,7 @@ font-weight: bold;
     width: 80%;
     height: auto;
     margin-bottom: 30px;
+    
   }
   
   .login-card-content {

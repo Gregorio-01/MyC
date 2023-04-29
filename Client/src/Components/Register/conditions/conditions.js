@@ -13,3 +13,5 @@ export const conditionsUser = `Como empresa nos dedicamos única y exclusivament
   sugerimos.`
 
   export const conditionsCompany = `a definir`
+
+  

@@ -8,11 +8,11 @@ export const MyCheckbox = ({label,...props}) => {
   return (
 
     <>
-     <label onMouseOver={(e) => e.target.style.textDecoration = 'underline'} onMouseOut={(e) => e.target.style.textDecoration = 'none'}>
+     <label className="reg-checkboxLabel" onMouseOver={(e) => e.target.style.textDecoration = 'underline'} onMouseOut={(e) => e.target.style.textDecoration = 'none'}>
       <input type="checkbox" {...field} {...props} />
           {label}
           </label>
-          <ErrorMessage name={props.name} component='span'  className="form-error"/>
+          <ErrorMessage name={props.name} component='span'  className="reg-form-error"/>
           <br/>
     </>
   )

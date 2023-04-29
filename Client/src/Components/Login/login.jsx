@@ -79,7 +79,7 @@ const Login = () => {
               <a className="login-forgot-password" href="#">
                 ¿Olvidaste tu contraseña?
               </a>
-              <a className="login-forgot-password" href="#">
+              <a className="login-forgot-password" href="/register">
                 ¿Aún no tienes una cuenta?
               </a>
             </Form>
@@ -96,7 +96,7 @@ const Login = () => {
           como cursos, códigos de edificación, libros constructivos, charlas...</p>
           <br/>
           <br/>
-          <button className='login-btn-login'>Más info</button>
+          <a href='/plataforma'><button className='login-btn-login'>Más info</button></a>
          </div>
         </div>
       
@@ -111,7 +111,7 @@ const Login = () => {
             clientes e inmobiliarias...</p>
           <br/>
           <br/>
-          <button className='login-btn-login'>Más info</button>
+          <a href="/beneficios"><button className='login-btn-login'>Más info</button></a>
          </div> 
         </div>
       </div>

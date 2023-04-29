@@ -1,0 +1,457 @@
+.plat-body {
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    overflow-x: hidden;
+    padding: 0;
+    background: url("background12.jpg") no-repeat center top;
+    background-size: 150%;
+  }
+  
+  
+  .plat-logo {
+    position: relative;
+    width: 17%;
+    height: auto;
+    float: right;
+    margin-top: -0.5%;
+    margin-right: 7%;
+  }
+  
+  
+  .plat-content {
+    display: flex;
+    padding: 0px;
+    margin: 0px;
+    position: absolute;
+    top: 16%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    height: 160px;
+    overflow: hidden;
+    font-family: "Lato", sans-serif;
+    font-size: 30px;
+    line-height: 40px;
+    color: #FF6A0E;
+  }
+  
+  .plat-content__container {
+    font-weight: 600;
+    overflow: hidden;
+    height: 40px;
+    padding: 0 40px;
+  }
+  
+    .plat-content__container:hover {
+        color: rgb(102, 254, 249);
+    }
+  
+  .plat-content__container__text {
+    display: inline;
+    float: left;
+    margin: 0;
+  }
+  
+  .plat-content__container__list {
+    margin-top: 0;
+    padding-left: 110px;
+    text-align: left;
+    list-style: none;
+    -webkit-animation-name: change;
+    -webkit-animation-duration: 16s;
+    -webkit-animation-iteration-count: infinite;
+    animation-name: change;
+    animation-duration: 16s;
+    animation-iteration-count: infinite;
+  }
+  
+    .plat-content__container__list:hover {
+        color: rgb(102, 254, 249);
+    }
+  
+  .plat-content__container__list__item {
+    line-height: 40px;
+    margin: 0;
+  }
+  
+  @-webkit-keyframes opacity {
+    0%, 100% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+  @-webkit-keyframes change {
+    0%, 12.66%, 100% {
+      transform: translate3d(0, 0, 0);
+    }
+    16.66%, 29.32% {
+      transform: translate3d(0, -25%, 0);
+    }
+    33.32%, 45.98% {
+      transform: translate3d(0, -50%, 0);
+    }
+    49.98%, 62.64% {
+      transform: translate3d(0, -75%, 0);
+    }
+    66.64%, 79.3% {
+      transform: translate3d(0, -50%, 0);
+    }
+    83.3%, 95.96% {
+      transform: translate3d(0, -25%, 0);
+    }
+  }
+  @keyframes opacity {
+    0%, 100% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+  @keyframes change {
+    0%, 12.66%, 100% {
+      transform: translate3d(0, 0, 0);
+    }
+    16.66%, 29.32% {
+      transform: translate3d(0, -25%, 0);
+    }
+    33.32%, 45.98% {
+      transform: translate3d(0, -50%, 0);
+    }
+    49.98%, 62.64% {
+      transform: translate3d(0, -75%, 0);
+    }
+    66.64%, 79.3% {
+      transform: translate3d(0, -50%, 0);
+    }
+    83.3%, 95.96% {
+      transform: translate3d(0, -25%, 0);
+    }
+  }
+  
+  
+  
+  .plat-contenedor2{
+        background-color: whitesmoke;
+        border-radius: 1%;
+        padding: 10px;
+        margin-top: 0px;
+        width: 100%;
+  }
+  
+  .plat-nav {
+    font-family: "Lato", sans-serif;
+    display: inline-block;
+    background: #FF6A0E;
+    color: white;
+    padding: 16px 20px;
+    text-decoration: none;
+    border-radius: 3%;
+    margin: 0 3px;
+  }
+  
+  .plat-nav:hover {
+      background: #D65304;
+  }
+  
+  .plat-quienessomos {
+    float: right;
+    position: absolute;
+    margin-right: 10%;
+    margin-top: 1%;
+    margin-left: 48%;
+    text-align: left;
+    font-family: "Lato", sans-serif;
+  }
+  
+  .plat-h1 {
+    display: flex;
+    color: #FF6A0E;
+    font-size: 55px;
+    border-color: white;
+    text-shadow: 1px 3px white;
+  }
+  
+  .plat-h2 {
+    display: flex;
+    font-size: 20px;
+    margin-top: 0%;
+    text-shadow: 1px 1px black;
+    color: rgb(102, 254, 249);
+  }
+  
+  .plat-h3 {
+    display: flex;
+    font-size: 20px;
+    color: white;
+    margin-top: 0%;
+    text-shadow: 1px 1px black;
+  }
+  
+  .plat-h4 {
+    display: flex;
+    position: float;
+    font-size: 16px;
+    color: white;
+    margin-top: 0%;
+    text-shadow: 1px 1px black;
+    font-family: "Lato", sans-serif;
+    margin-top: 32%;
+    margin-left: 3%;
+    margin-right: 57%;
+  }
+  
+  
+  .plat-video {
+    float: left;
+    width: 45%;
+    height: auto;
+    margin: auto;
+    margin-top: 4%;
+    margin-left: 2%;
+  }
+  
+  .plat-buttonform {
+  padding: 10px;
+  color: #fff;
+  background: #FF5E0E;
+  width: 10%;
+  height: 3.5%;
+  margin: 20px auto;
+  margin-top: 36%;
+  border: 0;
+  border-radius: 3px;
+  cursor: pointer;
+  font-family: "Lato", sans-serif;
+  font-size: 22px;
+  text-align: center;
+  }
+  
+  .plat-buttonform:hover {
+    background: #D65304;
+  }
+  
+  @media screen and (max-width: 1402px) {
+    .plat-buttonform {
+      display: flex;
+      margin-left: 16%;
+      padding: 8px;
+      width: 13%;
+      font-size: 18px;
+    }
+  }
+  
+  @media screen and (max-width: 1342px) {
+    .plat-content__container{
+      display: none;
+    }
+  }
+  
+  
+  @media screen and (max-width: 863px) {
+    .plat-logo {
+      display: flex;
+      margin-top: 0%;
+      margin-right: 25%;
+      width: 50%;
+    }  
+  }
+  
+  
+  @media screen and (max-width: 800px) and (min-width: 596px) {
+    .plat-body {
+      background-size: auto;
+      width: auto;
+      height: auto;
+    } 
+  
+    .plat-content__container {
+      display: none;
+    }
+  
+    .plat-nav {
+      position: float;
+      display: flex;
+      width: 100%;
+      height: auto;
+      margin-left: 8%;
+    }
+  
+    .plat-quienessomos {
+      position: float;
+      margin-top: 64%;
+      margin-left: 10%;
+      
+    }
+  
+    .plat-h1 {
+      display: flex;
+      font-size: 38px;
+    }
+  
+    .plat-h3 {
+      display: flex;
+      font-size: 18px;
+      
+    }
+  
+    .plat-h4 {
+      display: flex;
+      font-size: 18px;
+    }
+  
+    .plat-video {
+      width: 75%;
+      margin-left: 12.5%;
+    }
+  
+    .plat-buttonform {
+      padding: 15px;
+      color: #fff;
+      background: #FF5E0E;
+      width: 18%;
+      height: 3.5%;
+      margin: 20px auto;
+      margin-top: 59%;
+      display: flex;
+      border-radius: 3px;
+      font-family: "Lato", sans-serif;
+      font-size: 16.5px;
+      text-align: center;
+      
+      }
+  }
+  
+  
+  @media screen and (max-width: 596px) and (min-width: 521px) {
+    .plat-body {
+      background-size: auto;
+      width: auto;
+      height: auto;
+    } 
+  
+    .plat-content__container {
+      display: none;
+    }
+  
+    .plat-nav {
+      position: float;
+      display: flex;
+      width: 100%;
+      height: auto;
+      margin-left: 0%;
+      font-size: 12px;
+      
+    }
+  
+    .plat-quienessomos {
+      position: float;
+      margin-top: 70%;
+      margin-left: 5%;
+      
+    }
+  
+    .plat-h1 {
+      display: flex;
+      font-size: 37px;
+    }
+  
+    .plat-h3 {
+      display: flex;
+      font-size: 18px;
+      
+    }
+  
+    .plat-h4 {
+      display: flex;
+      font-size: 18px;
+    }
+  
+    .plat-video {
+      width: 75%;
+      margin-left: 12.5%;
+    }
+  
+    .plat-buttonform {
+      padding: 13px;
+      color: #fff;
+      background: #FF5E0E;
+      width: 22%;
+      height: 3.5%;
+      margin: 20px auto;
+      margin-top: 63%;
+      display: flex;
+      border-radius: 3px;
+      font-family: "Lato", sans-serif;
+      font-size: 13.5px;
+      text-align: center;
+      }
+  }
+  
+  
+  @media screen and (max-width: 521px) {
+    .plat-body {
+      background-size: auto;
+      width: auto;
+      height: auto;
+    } 
+  
+    .plat-content__container {
+      display: none;
+    }
+    
+    .plat-nav {
+      position: float;
+      display: flex;
+      width: 100%;
+      height: auto;
+      margin-left: 0%;
+      font-size: 9px;
+      
+    }
+  
+    .plat-quienessomos {
+      position: float;
+      margin-top: 70%;
+      margin-left: 5%;
+      
+    }
+  
+    .plat-h1 {
+      display: flex;
+      font-size: 37px;
+    }
+  
+    .plat-h3 {
+      display: flex;
+      font-size: 18px;
+      
+    }
+  
+    .plat-h4 {
+      display: flex;
+      font-size: 18px;
+    }
+  
+    .plat-video {
+      width: 75%;
+      margin-left: 12.5%;
+    }
+  
+    .plat-buttonform {
+      padding: 13px;
+      color: #fff;
+      background: #FF5E0E;
+      width: 22%;
+      height: 3.5%;
+      margin: 20px auto;
+      margin-top: 63%;
+      display: flex;
+      border-radius: 3px;
+      font-family: "Lato", sans-serif;
+      font-size: 13.5px;
+      text-align: center;
+      }
+  }

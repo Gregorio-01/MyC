@@ -11,12 +11,13 @@ import { useEffect } from "react";
 const Home = () => {
   
   useEffect(() => {
-    if(localStorage.getItem('userData')){
-      const data = JSON.parse(localStorage.getItem('userData')) 
-      let name = data.name 
-      let lastname = data.lastname
-      
-      if(name){
+    const hasShownWelcomeToast = sessionStorage.getItem('hasShownWelcomeToast');
+
+    if (!hasShownWelcomeToast && localStorage.getItem('userData')) {
+      const data = JSON.parse(localStorage.getItem('userData'));
+      const { name, lastname } = data;
+
+      if (name) {
         toast(`Bienvenido ${name} ${lastname}`, {
           position: "top-right",
           autoClose: 3000,
@@ -26,6 +27,9 @@ const Home = () => {
           draggable: true,
           progress: undefined,
           theme: "light",
+          onClose: () => {
+            sessionStorage.setItem('hasShownWelcomeToast', true);
+          }
         });
       }
     }
