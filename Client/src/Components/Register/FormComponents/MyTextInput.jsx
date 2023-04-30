@@ -9,7 +9,7 @@ export const MyTextInput = ({label,...props}) => {
     <>
   <label htmlFor={props.id || props.name} className="form-label">{label}</label>
   <input className="input-field" {...field} {...props} />
-  <ErrorMessage name={props.name} component='span' className="form-error" />
+  <ErrorMessage name={props.name} component='span' className="reg-form-error" />
   <br/>
 </>
 

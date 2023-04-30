@@ -13,7 +13,7 @@ export const MySelect = ({label, setSelectedRole,...props}) => {
     <>
         <label htmlFor={props.id || props.name}> {label} </label>
         <select  {...field} {...props} />
-        <ErrorMessage name={props.name} component='span' className="form-error"/>
+        <ErrorMessage name={props.name} component='span' className="reg-form-error"/>
         <br/>
     </>
   )

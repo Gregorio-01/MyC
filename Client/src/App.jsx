@@ -18,6 +18,9 @@ import UserProjects from "./Components/Login/AreaPersonal/UserProjects";
 import Card from "./Components/Empresas asociadas/components/card";
 import Main from "./Components/Empresas asociadas/components/main";
 import SliderCard from "./Components/Empresas asociadas/components/slider-card";
+import { Beneficios } from "./Components/Home/components/Beneficios";
+import { Nosotros } from "./Components/Home/components/Nosotros";
+import { LaPlataforma } from "./Components/Home/components/LaPlataforma";
 
 
 function App() {
@@ -39,6 +42,8 @@ function App() {
         <Route path="/redux" element={<ReduxComponent />} />
         <Route path="/terms-of-service" element={<Terminos />} />
         <Route path="/login/associates" element={<Main />} />
+        <Route path="/plataforma" element={<LaPlataforma />} />
+        <Route path="/beneficios" element={<Beneficios />} />
       </Routes>
       <Whatsappbutton />
       <Footer />
