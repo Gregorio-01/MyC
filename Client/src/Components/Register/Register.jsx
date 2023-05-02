@@ -8,8 +8,13 @@ import { MyCheckbox } from './FormComponents/MyCheckBox'
 import './register.css' // Importar el archivo CSS para los estilos del componente
 import { useState } from 'react'
 import { conditionsCompany, conditionsUser } from './conditions/conditions'
+import { createUser } from '../../store/slices/users/thunks'
+import { useDispatch } from 'react-redux'
 
 export const Register = () => {
+
+  const dispatch = useDispatch()
+
   const [ModalComponent, openModal, closeModal] = useModal()
 
   const [selectedRole, setSelectedRole] = useState('')
@@ -21,16 +26,19 @@ export const Register = () => {
       {/* Agregar la clase para los estilos del contenedor */}
       <Formik
         initialValues={{
-          firstName: '',
-          lastName: '',
-          emailAddress: '',
-          terms: false,
-          role: '',
-          password:'',
-          password2:''
+          firstName: 'qwewqe',
+          lastName: 'ewqewqe',
+          emailAddress: 'qwewq@dasdas.com',
+          terms: true,
+          role: 'user',
+          password:'Me123456',
+          password2:'Me123456'
         }}
-        onSubmit={(values) => {
-          console.log(values)
+        onSubmit={({name,lastname,email,password,role}) => {
+           //console.log(values)
+          const data =  {name,lastname,email,password,role}
+
+           dispatch( createUser(data))
         }}
         validationSchema={yup.object({
           firstName: yup
