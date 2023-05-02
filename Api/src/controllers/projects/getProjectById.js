@@ -2,9 +2,16 @@ import Project from '../../models/Projects.js';
 
 export async function getProjectById(req, res) {
   const projectId = req.params.id;
+  const userId = req.usuario._id;
 
   try {
-    const project = await Project.findById(projectId).populate('categories');
+    if(projectId) {
+      const project = await Project.findById(projectId).populate('categories');
+      if (!project) {
+        return res.status(404).json({ message: 'Proyecto no encontrado' });
+      }
+    }
+    const project = await Project.find({createdBy: userId}).populate('categories');
     if (!project) {
       return res.status(404).json({ message: 'Proyecto no encontrado' });
     }
