@@ -1,8 +1,11 @@
 .mainContainer {
-    height: 100%;
+    height: 500px;
     width: 100%;
-    /* border: 1px solid black; */
     padding: 8px;
+    background-image: url(https://res.cloudinary.com/do0gmouxr/image/upload/v1680739249/Pagina%20Interna/background12_pdgwkw.jpg);
+    background-size: cover;
+    background-position: center bottom;
+    align-items: center;
 }
 
 .container {
@@ -10,8 +13,8 @@
     flex-direction: row;
     column-gap: 10px;
     /* justify-content: space-around; */
-    height: 100%;
-    width: 100%;
+    height: 7rem;
+    width: 60rem;
     border: 1px solid black;
     padding: 5px;
     background-color: black;
@@ -61,6 +64,11 @@
             padding: 2px;
         }
 
+            .deleteProject:hover {
+                cursor: pointer;
+                background-color: darkred;
+            }
+
         .editProject {
             width: 100%;
             background-color: lightgray;
@@ -68,3 +76,8 @@
             border-radius: 2px;
             padding: 3px;
         }
+
+            .editProject:hover {
+                cursor: pointer;
+                background-color: darkgray;
+            }

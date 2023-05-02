@@ -23,23 +23,7 @@ const UserProjects = () => {
     return (
         <div className="mainContainer">
             {
-                projects[0] ? 
-                // (<div>
-                //     <div className="container">
-                //         <div className="imageContainer">
-                //             <img className="projectImage" src={projects[0].img[0]}/>
-                //         </div>
-                //         <div className="textContainer">
-                //             <div className="titleContainer">
-                //                 <h1 className="title">{projects[0].name}</h1>
-                //             </div>
-                //             <div className="descriptionContainer">
-                //                 <h6 className="description">{projects[0].description}</h6>
-                //             </div>
-                //         </div>
-                //     </div>
-                // </div>
-                (projects.map(project => { return (
+                projects[0] ? (projects.map(project => { return (
                     <div className="container">
                         <div className="imageContainer">
                             <img className="projectImage" src={project.img[0] || defaultPic} alt='Project pic!'/>

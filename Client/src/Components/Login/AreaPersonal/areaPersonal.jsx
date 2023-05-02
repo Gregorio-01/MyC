@@ -87,10 +87,10 @@ export default function AreaPersonal () {
                 <div className="containerNormal" id="containerNormal"> </div>
                 <div className="header__user">
                     <div id="datosContainer" className="header__datos">
-                        <div className="profilePic">
+                        <div className="profilePicContainer">
                             <img className="profilePic" src={userImage || 'https://res.cloudinary.com/do0gmouxr/image/upload/v1680739240/Pagina%20Interna/logoSinFondo_lbttlj.png'} alt=''/>
                             <div>
-                                <button className="modifyImage" onClick={openModal2}>Cambiar imagen</button>
+                                <button className="modifyImageButton" onClick={openModal2}>Cambiar imagen</button>
                             </div>
                             <ModalComponent2>
                                 <ModifyImage />
@@ -99,7 +99,7 @@ export default function AreaPersonal () {
                         <div className="headerDatosText">
                             <h1>{user.name || 'Usuario X'}</h1>
                             <div>
-                            <button className="modifyInfo" onClick={openModal}>Modificar información</button>
+                            <button className="modifyInfoButton" onClick={openModal}>Modificar información</button>
                             </div>
                         </div>
                         <ModalComponent>
@@ -123,7 +123,7 @@ export default function AreaPersonal () {
                             </div>
                             {
                                 previewProjects.length ? (previewProjects.map(project => { return (
-                                    <div className="container">
+                                    <div className="containerPreview">
                                         <div className="imageContainer">
                                             <img className="projectImage" src={project.img[0]}/>
                                         </div>
@@ -140,7 +140,7 @@ export default function AreaPersonal () {
                                                 <button onClick={openModal4} className="deleteProject">🗑</button>
                                             </div>
                                             <ModalComponent4>
-                                                <DeleteProject projectId={project._id}/>
+                                                <DeleteProject projectId={project._id} closeModal={closeModal4}/>
                                             </ModalComponent4>
                                             <div className="editContainer">
                                                 <button onClick={openModal5} className="editProject">🖊</button>
