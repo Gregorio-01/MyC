@@ -1,6 +1,6 @@
 import axios, { Axios } from "axios";
 import  {userApi, loginApi, projectApi, createUserApi} from "../../../API/usersAPI";
-import { setProjects, setUsers, setActualUser, setUpdatedUser, startLoadingUsers } from "./userSlice";
+import { setUserProjects, setUsers, setActualUser, setUpdatedUser, startLoadingUsers } from "./userSlice";
 
 //esta son las llamadas asicronicas que utilizan las acciones comunes una vez que se resuelven
 export const getUsers = () => {
@@ -49,22 +49,16 @@ export const getThisUser = () => {
   return async (dispatch) => {
     const userByToken = userApi();
     const thisUser = await userByToken.get(`/token`);
-    console.log(thisUser);
+    // console.log(thisUser.data);
     dispatch(setActualUser(thisUser.data));
   }
 };
 
-export const getUserProjects = (id) => {
+export const getUserProjects = () => {
   return async (dispatch) => {
-    const allUserProjects = await projectApi.get('/', id);
-    dispatch(setProjects(allUserProjects.data));
-  }
-};
-
-export const createProject = (project) => {
-  return async () => {
-    const response = await projectApi.post('/', project);
-    const newProject = response.data;
+    const allProjects = projectApi();
+    const allUserProjects = await allProjects.get('/token');
+    dispatch(setUserProjects(allUserProjects.data));
   }
 };
 
@@ -85,4 +79,3 @@ export const createUser = (user) => {
    
   }
 };
-

@@ -8,19 +8,26 @@ import ModifyImage from "./modifyImage";
 import UploadProject from "./uploadProject";
 import UserProjects from "./UserProjects";
 import { getThisUser, getUserProjects } from "../../../store/slices/users/thunks";
+import DeleteProject from "./deleteProject";
+import EditProject from "./editProject";
 
 export default function AreaPersonal () {
-
-    const userData = JSON.parse(window.localStorage.getItem('userData'));
 
     const dispatch = useDispatch();
     const [ModalComponent, openModal, closeModal] = useModal();
     const [ModalComponent2, openModal2, closeModal2] = useModal();
-    const [ModalComponent3, openModal3, claseModal3] = useModal();
-    // const [ModalComponent4, openModal4, claseModal4] = useModal();
+    const [ModalComponent3, openModal3, closeModal3] = useModal();
+    const [ModalComponent4, openModal4, closeModal4] = useModal();
+    const [ModalComponent5, openModal5, closeModal5] = useModal();
 
-    const projects = useSelector(store => store.users.projects);
-    const previewProjects = [projects[0], projects[1]];
+    const projects = useSelector(store => store.users.userProjects);
+    const previewProjects = [];
+    for (let i=0; i<projects.length; i++) {
+        previewProjects.push(projects[i])
+    };
+    const createdProject = useSelector(store => store.projects.createProject);
+    const deletedProject = useSelector(store => store.projects.deletedProject);
+    const updatedProject = useSelector(store => store.projects.updatedProject);
 
     const [showDd, setShowDd] = useState(false);
 
@@ -33,8 +40,8 @@ export default function AreaPersonal () {
 
     useEffect(() => {
         dispatch(getThisUser());
-        dispatch(getUserProjects(45));
-    }, [updatedUser]);
+        dispatch(getUserProjects());
+    }, [updatedUser, createdProject, deletedProject, updatedProject]);
 
     return (
         <div>
@@ -80,10 +87,10 @@ export default function AreaPersonal () {
                 <div className="containerNormal" id="containerNormal"> </div>
                 <div className="header__user">
                     <div id="datosContainer" className="header__datos">
-                        <div className="profilePic">
+                        <div className="profilePicContainer">
                             <img className="profilePic" src={userImage || 'https://res.cloudinary.com/do0gmouxr/image/upload/v1680739240/Pagina%20Interna/logoSinFondo_lbttlj.png'} alt=''/>
                             <div>
-                                <button className="modifyImage" onClick={openModal2}>Cambiar imagen</button>
+                                <button className="modifyImageButton" onClick={openModal2}>Cambiar imagen</button>
                             </div>
                             <ModalComponent2>
                                 <ModifyImage />
@@ -92,7 +99,7 @@ export default function AreaPersonal () {
                         <div className="headerDatosText">
                             <h1>{user.name || 'Usuario X'}</h1>
                             <div>
-                            <button className="modifyInfo" onClick={openModal}>Modificar información</button>
+                            <button className="modifyInfoButton" onClick={openModal}>Modificar información</button>
                             </div>
                         </div>
                         <ModalComponent>
@@ -115,8 +122,8 @@ export default function AreaPersonal () {
                                 <h2>Mis ultimos proyectos</h2>
                             </div>
                             {
-                                previewProjects[0]? (previewProjects.map(project => { return (
-                                    <div className="container">
+                                previewProjects.length ? (previewProjects.map(project => { return (
+                                    <div className="containerPreview">
                                         <div className="imageContainer">
                                             <img className="projectImage" src={project.img[0]}/>
                                         </div>
@@ -130,11 +137,17 @@ export default function AreaPersonal () {
                                         </div>
                                         <div className="optionsContainer">
                                             <div className="deleteContainer">
-                                                <button className="deleteProject">🗑</button>
+                                                <button onClick={openModal4} className="deleteProject">🗑</button>
                                             </div>
+                                            <ModalComponent4>
+                                                <DeleteProject projectId={project._id} closeModal={closeModal4}/>
+                                            </ModalComponent4>
                                             <div className="editContainer">
-                                                <button className="editProject">🖊</button>
+                                                <button onClick={openModal5} className="editProject">🖊</button>
                                             </div>
+                                            <ModalComponent5>
+                                                <EditProject projectId={project._id}/>
+                                            </ModalComponent5>
                                         </div>
                                     </div>
                                 )})) : <div className="noProjectsDiv">
@@ -157,7 +170,7 @@ export default function AreaPersonal () {
                             <div id="cardStats" className="card">
                                 <div className="item item--3">
                                     <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"></path><path fill="rgba(66,193,110,1)" d="M20.083 15.2l1.202.721a.5.5 0 0 1 0 .858l-8.77 5.262a1 1 0 0 1-1.03 0l-8.77-5.262a.5.5 0 0 1 0-.858l1.202-.721L12 20.05l8.083-4.85zm0-4.7l1.202.721a.5.5 0 0 1 0 .858L12 17.65l-9.285-5.571a.5.5 0 0 1 0-.858l1.202-.721L12 15.35l8.083-4.85zm-7.569-9.191l8.771 5.262a.5.5 0 0 1 0 .858L12 13 2.715 7.429a.5.5 0 0 1 0-.858l8.77-5.262a1 1 0 0 1 1.03 0zM12 3.332L5.887 7 12 10.668 18.113 7 12 3.332z"></path></svg>
-                                    <span className="quantity">{user.projects || '10'}</span>
+                                    <span className="quantity">{projects.length}</span>
                                     <span className="published">Publicados</span>
                                     </div>
                                 <div className="item item--1">

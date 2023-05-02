@@ -12,10 +12,6 @@
     --fuenteprincipal: 'Nunito Sans';
 }
 
-/* .navBar-container {
-  display: none;
-} */
-
 .navbar{
   display: flex;
     align-items: center;
@@ -57,27 +53,19 @@
     background-size: cover;
     background-position: center bottom;
     width: auto;
-    height: 650px;
+    /* height: 650px; */
+    height: 500px;
     font-size: 1.6rem;
     text-shadow: 2px 1px 0.5px black;
     display: flex;
     justify-content: space-between;
 }
-
-/*   
-.header__user {
-    justify-content: space-between;
-} */
   
 .header__datos {
-    /* display: flex;
-    margin-top: 200px;
-    margin-left: 2rem;
-    /* align-items: center; */
     position: relative;
     top: 2rem;
     left: 2rem;
-    height: 100px;
+    height: 232px;
     width: 314px;
     display: flex;
     align-items: center;
@@ -87,7 +75,7 @@
 .headerDatosText {
   display: flex;
   flex-direction: column;
-  row-gap: 10px;
+  row-gap: 48px;
   align-items: center;
   justify-content: space-around;
 }
@@ -110,23 +98,44 @@
     font-size: 2rem;
 }
 
-.modifyInfo:hover {
-  cursor: pointer;
-}
-  
-.profilePic {
-    width: 160px;
-    height: 160px;
-    border-radius: 12rem;
-    /* margin-right: 2rem; */
-    /* background-image: url(); */
-    /* background-size: cover; */
-    /* background-position: center center; */
+.modifyInfoButton {
+  border: 1px solid darkslategray;
+  border-radius: 10rem;
+  color: white;
+  background-color: steelblue;
+  height: 2.5rem;
 }
 
-.modifyImage:hover {
-  cursor: pointer;
+  .modifyInfoButton:hover {
+    cursor: pointer;
+    background-color: rgb(100, 174, 235);
+  }
+  
+.profilePicContainer {
+    width: 100%;
+    height: 100%;
+    border-radius: 12rem;
 }
+
+  .profilePic {
+    width: 130px;
+    height: 130px;
+    border-radius: 12rem;
+  }
+
+.modifyImageButton {
+  height: 2.5rem;
+  width: 5rem;
+  border: 1px solid darkslategray;
+  border-radius: 5rem;
+  background-color: steelblue;
+  color: white;
+}
+
+  .modifyImageButton:hover {
+    cursor: pointer;
+    background-color: rgb(100, 174, 235);
+  }
   
 .header__msjBtn {
   position: relative;
@@ -226,6 +235,19 @@
   padding: 20px;
   margin-right: 5rem;
 }
+
+ .containerPreview {
+  display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    /* justify-content: space-around; */
+    height: 100%;
+    width: 100%;
+    border: 1px solid black;
+    padding: 5px;
+    background-color: black;
+    color: white;
+  }
   
 .proyectos__container h2 {
     color: var(--colorNegro);
@@ -258,9 +280,19 @@
   background-color: var(--colorNaranjaOscuro);
 }
 
+  .seeAll:hover {
+    cursor: pointer;
+    background-color: rgb(128, 70, 0);
+  }
+
 .upload {
   background-color: green;
 }
+
+  .upload:hover {
+    cursor: pointer;
+    background-color: rgb(0, 54, 0);
+  } 
 
 .card {
     width: 240px;
@@ -321,27 +353,35 @@
   position: absolute;
   display: flex;
   flex-direction: column;
+  row-gap: 23px;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   top: 6.6rem;
   right: 0;
   width: 130px;
   height: 14rem;
-  padding: 15px;
+  /* padding: 1px; */
   padding-top: 1px;
   background-color: white;
 }
 
 .Dropdown a {
   display: flex;
+  width: 100%;
+  height: 33px;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  height: 20px;
+  /* height: 20px; */
   padding-top: 10px;
   margin-right: 0px;
   z-index: 99;
 }
+
+  .Dropdown a:hover {
+    cursor: pointer;
+    background-color: rgb(189, 189, 189);
+  }
 
 .Dropdown h4 {
   position: absolute;
