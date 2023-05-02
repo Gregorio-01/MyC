@@ -14,6 +14,10 @@ const Login = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate();
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }, []);
+
   return (
     <div className="login-container">
       <div className='login-card-container'>

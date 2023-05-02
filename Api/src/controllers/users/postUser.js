@@ -2,6 +2,8 @@ import User from '../../models/Users.js';
 import bcrypt from 'bcryptjs';
 
 export async function postUser(req, res) {
+
+  
   try {
     let { name, lastname, email, password } = req.body;
 

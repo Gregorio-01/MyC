@@ -63,15 +63,19 @@ export const getUserProjects = () => {
 };
 
 export const createUser = (user) => {
-  
+    
   return async (dispatch) => {
-
-    const api = createUserApi()
+    
+    try{
+    const api = userApi()
 
     const newUser = await api.post('/',user);
 
-    console.log(newUser)
-
-    //dispatch(());
+    return newUser }
+    
+    catch(err){
+      err=> err
+    }
+   
   }
 };
