@@ -21,7 +21,7 @@ export const validateJWT = async (req = request, res = response, next) => {
         msg: 'token no valido, usuario no activo / no hay usuario',
       })
     }
-   
+    console.log('entro al JWT');
     req.usuario = usuario 
 
     next()

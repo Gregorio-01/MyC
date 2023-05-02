@@ -20,10 +20,12 @@ export async function putUser(req, res) {
         folder: "FotoPerfil"
       });
       const imageUrl = result.secure_url;
+      console.log(imageUrl);
       updates.img = imageUrl;
     }
     // Buscamos el usuario por su ID y lo actualizamos
     const updatedUser = await User.findByIdAndUpdate(userId, updates, { new: true });
+    console.log(updatedUser);
     if (!updatedUser) {
       return res.status(404).json({ message: 'Usuario no encontrado' });
     }
