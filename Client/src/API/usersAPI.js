@@ -35,6 +35,13 @@ export const userApi = () => {
     return userInstace;
 };
 
+export const createUserApi = () => {
+    const createUser = axios.create({
+      baseURL: 'http://localhost:3001/login'
+    });
+    return createUser;
+  }
+
 export const categoriesApi = () => {
 
     let categoriesInstance = axios.create({

@@ -111,7 +111,7 @@ const Login = () => {
             clientes e inmobiliarias...</p>
           <br/>
           <br/>
-          <a href="/beneficios"><button className='login-btn-login'>Más info</button></a>
+          <a href="/beneficios2"><button className='login-btn-login'>Más info</button></a>
          </div> 
         </div>
       </div>

@@ -3,11 +3,12 @@
   justify-content: space-between;
   flex-wrap: wrap;
   height: 100vh;
-  overflow: hidden;
+  background-image: url('https://res.cloudinary.com/do0gmouxr/image/upload/v1680739249/Pagina%20Interna/background12_pdgwkw.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url('https://res.cloudinary.com/do0gmouxr/image/upload/v1680739249/Pagina%20Interna/background12_pdgwkw.jpg');
+  overflow: auto;
+  padding: 20px;
 }
 
   

@@ -21,6 +21,7 @@ import SliderCard from "./Components/Empresas asociadas/components/slider-card";
 import { Beneficios } from "./Components/Home/components/Beneficios";
 import { Nosotros } from "./Components/Home/components/Nosotros";
 import { LaPlataforma } from "./Components/Home/components/LaPlataforma";
+import { Beneficios2 } from "./Components/Home/components/Beneficios2";
 
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
         <Route path="/login/associates" element={<Main />} />
         <Route path="/plataforma" element={<LaPlataforma />} />
         <Route path="/beneficios" element={<Beneficios />} />
+        <Route path="/beneficios2" element={<Beneficios2 />} />
       </Routes>
       <Whatsappbutton />
       <Footer />
