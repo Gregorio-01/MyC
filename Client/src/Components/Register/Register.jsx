@@ -30,13 +30,13 @@ export const Register = () => {
       {/* Agregar la clase para los estilos del contenedor */}
       <Formik
         initialValues={{
-          firstName: 'qwewfgfqe',
-          lastName: 'ewqewqe',
-          emailAddress: 'qwewfgq@dasdas.com',
+          firstName: '',
+          lastName: '',
+          emailAddress: '',
           terms: true,
-          role: 'user',
-          password: 'Me123456',
-          password2: 'Me123456',
+          role: '',
+          password: '',
+          password2: '',
         }}
         onSubmit={({ emailAddress, firstName, lastName, password }) => {
           const data = {
