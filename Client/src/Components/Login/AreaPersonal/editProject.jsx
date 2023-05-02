@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import './uploadProject.css';
-import { createProject } from "../../../store/slices/projects/thunks";
+import { editProject } from "../../../store/slices/projects/thunks";
 import { getCategories } from "../../../store/slices/categories/thunks";
 
-const UploadProject = () => {
+const EditProject = ({projectId}) => {
 
     const dispatch = useDispatch();
 
     const categories = useSelector(store => store.categories.categories);
-    const createdProject = useSelector(store => store.projects.createProject);
+    const editedProject = useSelector(store => store.projects.editedProject);
 
     const [project, setProject] = useState({
         name: '',
@@ -39,15 +38,15 @@ const UploadProject = () => {
         formData.append('name', project.name);
         formData.append('description', project.description);
         formData.append('categories', project.categories);
-        dispatch(createProject(formData));
+        dispatch(editProject(formData, projectId));
     };
 
     useEffect(() => {
         dispatch(getCategories());
     }, []);
-
+    
     return (
-        <div className="uploadProjectContainer">
+        <div className="editProjectContainer">
             <div>
                 <input className="input" name="name" value={project.name} onChange={(e) => handleChange(e)} placeholder="Nombre del proyecto"/>
             </div>
@@ -70,13 +69,13 @@ const UploadProject = () => {
                 </select>
             </div>
             <div className="buttonContainer">
-                <button className="button" onClick={uploadProject}>Subir proyecto</button>
+                <button className="button" onClick={uploadProject}>Guardar cambios</button>
             </div>
             {
-                createdProject && <span>Proyecto creado!</span>
+                editedProject && <span>Cambios guardados!</span>
             }
         </div>
     )
 };
 
-export default UploadProject;
+export default EditProject;
