@@ -1,5 +1,5 @@
 .uploadProjectContainer {
-    height: 220px;
+    height: 270px;
     display: flex;
     flex-direction: column;
     row-gap: 5px;
@@ -23,3 +23,9 @@
         color: orange;
         background-color: rgb(255, 218, 151);
     }
+
+.projectCreated {
+    display: flex;
+    justify-content: center;
+    color: green;
+}

@@ -16,7 +16,7 @@ const ModifyImage = () => {
     };
 
     return (
-        <div className="mainContainer">
+        <div className="modifyImageContainer">
             <div className="inputContainer">
                 <input className="input" type="file" onChange={(e) => setImageSelected(e.target.files[0])}/>
             </div>

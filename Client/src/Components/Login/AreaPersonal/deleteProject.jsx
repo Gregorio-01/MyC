@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteProject } from "../../../store/slices/projects/thunks";
+import { deleteProject, cleanState } from "../../../store/slices/projects/thunks";
 import './deleteProject.css'
 
 const DeleteProject = ({projectId, closeModal}) => {
@@ -11,7 +11,11 @@ const DeleteProject = ({projectId, closeModal}) => {
 
     function deleteNow() {
         dispatch(deleteProject(projectId));
+        setChanges(true);
     };
+
+    useEffect(() => {
+    }, []);
 
     return (
         <div className="deleteContainer">
@@ -20,11 +24,6 @@ const DeleteProject = ({projectId, closeModal}) => {
                 <button className="deleteButton" onClick={deleteNow}>Si</button>
                 <button className="noButton" onClick={closeModal}>No</button>
             </div>
-            {
-                projectDeleted && <div>
-                    <h1>{projectDeleted}</h1>
-                </div>
-            }
         </div>
     );
 };

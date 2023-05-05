@@ -14,10 +14,10 @@ export const NavBarHook = () => {
                         <a href="internos.html"><img src="https://res.cloudinary.com/do0gmouxr/image/upload/v1680739240/Pagina%20Interna/logoSinFondo_lbttlj.png" alt=""/></a>
                     </div>
                     <div id="navbar" className="abierto header__enlaces navbar">
-                        <Link to="/login">
+                        <Link className="header-a" to="/login">
                             <a href="">Inicio</a>
                         </Link>
-                        <Link to="/contact">
+                        <Link className="header-a" to="/contact">
                             <a href="">Contacto</a>
                         </Link>
                         <a onClick={() => setShowDd((prev) => !prev)} className='navbar__img'>

@@ -12,6 +12,7 @@ export async function createProject(req, res) {
   const { name, description, categories } = req.body;
   const createdBy = req.usuario._id;
   const file = req.files.image;
+  console.log(file);
   try {
     const result = await cloudinary.uploader.upload(file.tempFilePath, {
       public_id: `${Date.now()}`,
