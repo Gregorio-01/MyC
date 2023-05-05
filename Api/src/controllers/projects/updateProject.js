@@ -11,8 +11,8 @@ cloudinary.config({
 export async function updateProject(req, res) {
   const projectId = req.params.id;
   const updates = req.body;
-  const file = req.files.image;
-
+  const file = req.files ? req.files.image : null;
+  console.log(projectId, file, updates);
   try {
     if (file) {
       const result = await cloudinary.uploader.upload(file.tempFilePath, {
@@ -23,6 +23,7 @@ export async function updateProject(req, res) {
       const imageUrl = result.secure_url;
       updates.img = imageUrl;
     }
+    console.log(updates);
     const updatedProject = await Project.findByIdAndUpdate(
       projectId,
       updates,
@@ -31,9 +32,9 @@ export async function updateProject(req, res) {
     if (!updatedProject) {
       return res.status(404).json({ message: 'Proyecto no encontrado' });
     }
-    res.status(201).send('Proyecto modificado!');
+    res.status(201).json({message:'Proyecto modificado!'});
   } catch (error) {
     console.error(error);
-    res.status(500).send('Error al actualizar el proyecto');
+    res.status(500).json({message:'Error al actualizar el proyecto'});
   }
 }

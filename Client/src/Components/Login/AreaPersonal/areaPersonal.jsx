@@ -10,6 +10,7 @@ import UserProjects from "./UserProjects";
 import { getThisUser, getUserProjects } from "../../../store/slices/users/thunks";
 import DeleteProject from "./deleteProject";
 import EditProject from "./editProject";
+import { cleanState } from "../../../store/slices/projects/thunks";
 
 export default function AreaPersonal () {
 
@@ -22,10 +23,13 @@ export default function AreaPersonal () {
 
     const projects = useSelector(store => store.users.userProjects);
     const previewProjects = [];
-    for (let i=0; i<projects.length; i++) {
+    for (let i=0; i<=1; i++) {
+        if(!projects[i]) {
+            break;
+        }
         previewProjects.push(projects[i])
     };
-    const createdProject = useSelector(store => store.projects.createProject);
+    const createdProject = useSelector(store => store.projects.createdProject);
     const deletedProject = useSelector(store => store.projects.deletedProject);
     const updatedProject = useSelector(store => store.projects.updatedProject);
 
@@ -38,9 +42,15 @@ export default function AreaPersonal () {
     const userImage = user.img;
     const updatedUser = useSelector((store) => store.users.updatedUser);
 
+    function closeSesion () {
+        localStorage.removeItem('userData');
+        // React.navigate('/login');
+    };
+
     useEffect(() => {
         dispatch(getThisUser());
         dispatch(getUserProjects());
+        dispatch(cleanState('createdProject'));
     }, [updatedUser, createdProject, deletedProject, updatedProject]);
 
     return (
@@ -51,10 +61,10 @@ export default function AreaPersonal () {
                         <a href="internos.html"><img src="https://res.cloudinary.com/do0gmouxr/image/upload/v1680739240/Pagina%20Interna/logoSinFondo_lbttlj.png" alt=""/></a>
                     </div>
                     <div id="navbar" className="abierto header__enlaces navbar">
-                        <Link to="/login">
+                        <Link className="header-a" to="/login">
                             <a href="">Inicio</a>
                         </Link>
-                        <Link to="/contact">
+                        <Link className="header-a" to="/contact">
                             <a href="">Contacto</a>
                         </Link>
                         <a onClick={() => setShowDd((prev) => !prev)} className='navbar__img'>
@@ -62,7 +72,7 @@ export default function AreaPersonal () {
                         </a>
                         {
                             showDd && (
-                            <div className="Dropdown">
+                            <div className="personalDropdown">
                                 <Link to='/login/areaPersonal'>
                                     <h4>Área Personal</h4>
                                 </Link>
@@ -75,7 +85,7 @@ export default function AreaPersonal () {
                                 <Link to='/'>
                                     <h4>Términos y Condiciones</h4>
                                 </Link>
-                                <Link to='/'>
+                                <Link to='/login' onClick={closeSesion}>
                                     <h4>Cerrar Sesión</h4>
                                 </Link>
                             </div>
@@ -97,7 +107,7 @@ export default function AreaPersonal () {
                             </ModalComponent2>
                         </div>
                         <div className="headerDatosText">
-                            <h1>{user.name || 'Usuario X'}</h1>
+                            <h1>{user.name}</h1>
                             <div>
                             <button className="modifyInfoButton" onClick={openModal}>Modificar información</button>
                             </div>

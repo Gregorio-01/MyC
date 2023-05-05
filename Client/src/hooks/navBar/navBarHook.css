@@ -27,9 +27,10 @@ height: auto;
 
 .header__enlaces {
     font-size: 2rem;
+    color: var(--colorNegro);
   }
   
-  .header__enlaces a {
+  .header-a a{
     color: var(--colorNegro);
     margin-right: 2rem;
   }

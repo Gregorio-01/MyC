@@ -1,5 +1,5 @@
 import { projectApi } from "../../../API/usersAPI";
-import { setProjects, setCreatedProject, setDeletedProject, setEditedProject } from "./projectsSlice";
+import { setProjects, setCreatedProject, setDeletedProject, setEditedProject, setClean } from "./projectsSlice";
 
 export const getProjects = () => {
     return async (dispatch) => {
@@ -32,8 +32,14 @@ export const editProject = (project, projectId) => {
   return async (dispatch) => {
     const projectUpdate = projectApi();
     const response = await projectUpdate.put(`/${projectId}`, project);
-    console.log(response.data);
-    const message = response.data;
+    // console.log(response.data);
+    const message = response.data.message;
     dispatch(setEditedProject(message));
+  };
+};
+
+export const cleanState = (name) => {
+  return async (dispatch) => {
+    dispatch(setClean(name));
   };
 };

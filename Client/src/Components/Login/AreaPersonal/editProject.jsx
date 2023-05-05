@@ -9,40 +9,46 @@ const EditProject = ({projectId}) => {
 
     const categories = useSelector(store => store.categories.categories);
     const editedProject = useSelector(store => store.projects.editedProject);
+    const [changes, setChanges] = useState(false);
+
+    const formData = new FormData();
 
     const [project, setProject] = useState({
         name: '',
-        img: {},
+        image: {},
         description: '',
         categories: '',
     });
     function handleChange(e) {
         e.preventDefault();
-        if (e.target.name === 'img') {
+        if (e.target.name === 'image') {
             setProject({
                 ...project,
-                img: e.target.files[0]
+                [e.target.name]: e.target.files[0]
             });
         }
-        if (e.target.name !== 'img') {
+        if (e.target.name !== 'image') {
             setProject({
                 ...project,
                 [e.target.name]: e.target.value,
             });
+            formData.append(`${e.target.name}`, e.target.value);
         };
     };
 
     function uploadProject() {
-        const formData = new FormData();
-        formData.append('image', project.img);
-        formData.append('name', project.name);
-        formData.append('description', project.description);
-        formData.append('categories', project.categories);
+        for (let key in project) {
+            if (project[key]) {
+                formData.append(`${key}`, project[key]);
+            };
+        };
         dispatch(editProject(formData, projectId));
+        setChanges(true);
     };
 
     useEffect(() => {
         dispatch(getCategories());
+        setChanges(false);
     }, []);
     
     return (
@@ -51,7 +57,7 @@ const EditProject = ({projectId}) => {
                 <input className="input" name="name" value={project.name} onChange={(e) => handleChange(e)} placeholder="Nombre del proyecto"/>
             </div>
             <div className="inputContainer">
-                <input className="input" type="file" name='img' onChange={(e) => handleChange(e)} placeholder="Elegir archivo"/>
+                <input className="input" type="file" name='image' onChange={(e) => handleChange(e)} placeholder="Elegir archivo"/>
             </div>
             <div>
                 <input className="input" name="description" onChange={(e) => handleChange(e)} placeholder="Descripción"/>
@@ -72,7 +78,7 @@ const EditProject = ({projectId}) => {
                 <button className="button" onClick={uploadProject}>Guardar cambios</button>
             </div>
             {
-                editedProject && <span>Cambios guardados!</span>
+                changes && <span>{editedProject}</span>
             }
         </div>
     )

@@ -1,8 +1,6 @@
 import axios from "axios";
 //aqui se crea un eddpoin base de las rutas de usuario
 
-const {token} = JSON.parse(localStorage.getItem('userData'));
-
 export const loginApi = () => {
 
     const loginInterfase = axios.create({
@@ -13,6 +11,7 @@ export const loginApi = () => {
 
 export const projectApi = () => {
 
+    const {token} = JSON.parse(localStorage.getItem('userData'));
     const headers = {
         'token': token,
     };
@@ -25,6 +24,7 @@ export const projectApi = () => {
 
 export const userApi = () => {
 
+    const {token} = JSON.parse(localStorage.getItem('userData'));
     const headers = {
         'token': token,
     };

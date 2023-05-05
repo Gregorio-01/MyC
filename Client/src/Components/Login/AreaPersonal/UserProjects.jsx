@@ -5,11 +5,15 @@ import './userProjects.css';
 import useModal from "../../../hooks/useModal/useModal";
 import DeleteProject from "./deleteProject";
 import EditProject from "./editProject";
+import { setDeletedProject } from "../../../store/slices/projects/projectsSlice";
+import { cleanState } from "../../../store/slices/projects/thunks";
 
 const UserProjects = () => {
 
     const dispatch = useDispatch();
     const projects = useSelector(store => store.users.userProjects);
+    const deletedProject = useSelector(store => store.projects.deletedProject);
+    const editedProject = useSelector(store => store.projects.editedProject);
 
     const defaultPic = 'https://res.cloudinary.com/do0gmouxr/image/upload/v1680739240/Pagina%20Interna/logoSinFondo_lbttlj.png';
 
@@ -18,7 +22,9 @@ const UserProjects = () => {
 
     useEffect(() => {
         dispatch(getUserProjects());
-    }, []);
+        dispatch(cleanState('editedProject'));
+        dispatch(cleanState('deletedProject'));
+    }, [deletedProject, editedProject]);
 
     return (
         <div className="mainContainer">
@@ -41,7 +47,7 @@ const UserProjects = () => {
                                 <button onClick={openModal} className="deleteProject">X</button>
                             </div>
                             <ModalComponent>
-                                <DeleteProject projectId={project._id} />
+                                <DeleteProject projectId={project._id} closeModal={closeModal}/>
                             </ModalComponent>
                             <div className="editContainer">
                                 <button onClick={openModal2} className="editProject">🖊</button>

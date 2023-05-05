@@ -3,13 +3,15 @@ import { useDispatch, useSelector } from "react-redux";
 import './uploadProject.css';
 import { createProject } from "../../../store/slices/projects/thunks";
 import { getCategories } from "../../../store/slices/categories/thunks";
+import { setCreatedProject } from "../../../store/slices/projects/projectsSlice";
 
 const UploadProject = () => {
 
     const dispatch = useDispatch();
 
     const categories = useSelector(store => store.categories.categories);
-    const createdProject = useSelector(store => store.projects.createProject);
+    const createdProject = useSelector(store => store.projects.createdProject);
+    const [savedChanges, setSavedChanges] = useState(false);
 
     const [project, setProject] = useState({
         name: '',
@@ -34,16 +36,19 @@ const UploadProject = () => {
     };
 
     function uploadProject() {
+        setSavedChanges(true);
         const formData = new FormData();
         formData.append('image', project.img);
         formData.append('name', project.name);
         formData.append('description', project.description);
         formData.append('categories', project.categories);
+        console.log(formData.get('image'));
         dispatch(createProject(formData));
     };
 
     useEffect(() => {
         dispatch(getCategories());
+        setSavedChanges(false);
     }, []);
 
     return (
@@ -73,7 +78,7 @@ const UploadProject = () => {
                 <button className="button" onClick={uploadProject}>Subir proyecto</button>
             </div>
             {
-                createdProject && <span>Proyecto creado!</span>
+                savedChanges && <span className="projectCreated">{createdProject}</span>
             }
         </div>
     )

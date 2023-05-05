@@ -10,13 +10,16 @@ const ModifyInfo = () => {
 
     const dispatch = useDispatch();
     
-    const changes = useSelector((store) => store.users.updatedUser);
-    const [savedChanges, setSavedChanges] = useState(true);
+    const updatedUser = useSelector((store) => store.users.updatedUser);
+    const [savedChanges, setSavedChanges] = useState(false);
 
     useEffect(() => {
+        console.log(updatedUser);
+        console.log(savedChanges);
+        // setSavedChanges(true);
         // setSavedChanges(true);
         // return setSavedChanges(false);
-    }, [changes]);
+    }, [updatedUser]);
 
     return (
         <div>
@@ -31,7 +34,8 @@ const ModifyInfo = () => {
                 password2:''
                 }}
                 onSubmit={(values) => {
-                console.log(values);
+                // console.log(values);
+                setSavedChanges(true);
                 dispatch(putUser(values));
                 }}
                 validationSchema={yup.object({
@@ -122,7 +126,7 @@ const ModifyInfo = () => {
                     {
                         savedChanges && 
                         <div className="savedChangesContainer">
-                            <span className="savedChanges">Cambios guardados!</span>
+                            <span className="savedChanges">{updatedUser}</span>
                         </div>
                     }
                 </Form>

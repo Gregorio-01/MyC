@@ -5,6 +5,9 @@
     background-image: url(https://res.cloudinary.com/do0gmouxr/image/upload/v1680739249/Pagina%20Interna/background12_pdgwkw.jpg);
     background-size: cover;
     background-position: center bottom;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
     align-items: center;
 }
 
